@@ -10,6 +10,14 @@ public class Player : MonoBehaviour
 
     public static Player main;
 
+    private void OnEnable()
+    {
+        healthSystem.onDeath += OnDie;
+    }
+    private void OnDisable()
+    {
+        healthSystem.onDeath -= OnDie;
+    }
     private void Awake()
     {
         main = this;
@@ -19,6 +27,11 @@ public class Player : MonoBehaviour
         look = GetComponent<PlayerLook>();
         movement = GetComponent<PlayerMovement>();
         healthSystem = GetComponent<LivingMixin>();
+    }
+
+    private void OnDie()
+    {
+        Debug.LogError("Death was not implemented yet!");
     }
     public Vector3 GetPosition()
     {
