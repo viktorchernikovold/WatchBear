@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 490767369}
+  - component: {fileID: 490767370}
   m_Layer: 0
   m_Name: weapon_bulletOut
   m_TagString: Untagged
@@ -154,6 +155,20 @@ Transform:
   m_Father: {fileID: 716306469}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &490767370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490767368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb2d542a33331c498fab29c5af26e86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gun: {fileID: 11400000, guid: d06e29f5c340c034ba21e8d0a3297d3f, type: 2}
+  currentAmmo: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,9 +529,9 @@ GameObject:
   - component: {fileID: 1566696063}
   - component: {fileID: 1566696064}
   - component: {fileID: 1566696065}
-  - component: {fileID: 1566696066}
   - component: {fileID: 1566696067}
   - component: {fileID: 1566696068}
+  - component: {fileID: 1566696069}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -567,20 +582,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponOrigin: {fileID: 1753187402}
   RotationSpeed: 720
---- !u!114 &1566696066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1566696062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fb2d542a33331c498fab29c5af26e86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gun: {fileID: 11400000, guid: d06e29f5c340c034ba21e8d0a3297d3f, type: 2}
-  currentAmmo: 0
 --- !u!114 &1566696067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,6 +649,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1566696069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566696062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68cee5668f380a84997cb1a73739854e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  look: {fileID: 1566696065}
+  movement: {fileID: 1566696064}
+  healthSystem: {fileID: 1566696067}
 --- !u!1 &1753187401
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,7 +26,7 @@ public class Bullet : MonoBehaviour
         float timeFracture = timeInAir / bullet.DropTime;
         float speedMultiply = bullet.DropSpeedCurve.Evaluate(timeFracture);
         timeInAir += Time.deltaTime;
-        transform.Translate(transform.right * bullet.Speed * speedMultiply * Time.deltaTime * Time.timeScale);
+        transform.Translate(Vector2.up * bullet.Speed * speedMultiply * Time.deltaTime * Time.timeScale);
     }
     public void Drop()
     {
