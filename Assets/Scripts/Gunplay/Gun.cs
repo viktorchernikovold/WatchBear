@@ -20,7 +20,7 @@ public class Gun : MonoBehaviour
 
     private void Update()
     {
-        if (delay > 0f) delay -= Time.deltaTime * Time.timeScale;
+        if (delay > 0f) delay -= Time.deltaTime;
 
         if (Input.GetMouseButton(0))
         {

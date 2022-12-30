@@ -1,18 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Pickable : MonoBehaviour
 {
     public int amount;
+    public float cooldownTime = 1f;
     public ItemType type;
 
-    public void Pick(int amount)
+    [SerializeField]
+    float timer;
+
+    private void Awake()
     {
-        this.amount -= amount;
-        if (this.amount <= 0)
+        timer = cooldownTime;
+    }
+
+    private void Update()
+    {
+        timer -= Time.deltaTime;
+    }
+
+    public void Pick(int _amount)
+    {
+        if (timer > 0f)
+            return;
+
+        amount -= _amount;
+
+        if (amount <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }
