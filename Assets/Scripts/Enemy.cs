@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     public float attackDelay;
     public float attackCooldown;
 
-    LivingMixin target;
+    public LivingMixin target;
 
 
     private void Update()
@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
     }
     private void Move()
     {
-        Vector2 direction = transform.position - target.transform.position;
+        Vector2 direction = target.transform.position - transform.position;
         direction.Normalize();
         transform.Translate(direction * Time.deltaTime);
     }

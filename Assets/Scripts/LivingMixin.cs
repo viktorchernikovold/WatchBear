@@ -60,7 +60,7 @@ public class LivingMixin : MonoBehaviour
 
     public float health
     {
-        get => health;
+        get => m_health;
         private set => m_health = Mathf.Clamp(value, 0f, maxHealth);
     }
     public float maxHealth
