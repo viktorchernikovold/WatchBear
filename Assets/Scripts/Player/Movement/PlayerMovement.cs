@@ -4,48 +4,28 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 2f;
-
-    [Tooltip("Current speed [m/s]")]
     public float speed;
-    [Tooltip("Current velocity")]
     public Vector2 velocity;
-    [Tooltip("Current normalized movement input")]
-    Vector2 moveInput;
+    private Vector2 moveInput;
+    public Rigidbody2D useRigidbody;
 
-    public delegate void OnBeginMove();
     public delegate void OnMove(Vector3 velocity);
-    public delegate void OnEndMove();
-    public event OnBeginMove onBeginMove;
     public event OnMove onMove;
-    public event OnEndMove onEndMove;
 
-    private void Update()
+    private void FixedUpdate()
     {
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
         moveInput.Normalize();
 
-        Vector2 deltaPos = moveInput * moveSpeed;
-        float oldSpeed = this.speed;
-        this.speed = deltaPos.magnitude;
-        this.velocity = deltaPos;
-
-        if (speed > 0f)
+        this.velocity = useRigidbody.velocity;
+        this.speed = this.velocity.magnitude;
+        if (this.speed > 0)
         {
             onMove?.Invoke(this.velocity);
-            if (oldSpeed == 0)
-            {
-                onBeginMove?.Invoke();
-            }
-        }
-        else
-        {
-            if (oldSpeed > 0)
-            {
-                onEndMove?.Invoke();
-            }
         }
 
-        transform.Translate(deltaPos * Time.deltaTime * Time.timeScale);
+        Vector2 deltaPos = moveInput * moveSpeed;
+        useRigidbody.velocity = deltaPos;
     }
 }

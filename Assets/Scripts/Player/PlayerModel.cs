@@ -5,9 +5,8 @@ public class PlayerModel : PlayerComponent
 {
     [SerializeField] Animator bodyAnimator;
 
-    private void OnEnable()
+    private void FixedUpdate()
     {
-        player.movement.onBeginMove += () => { bodyAnimator.SetBool("isMoving", true); };
-        player.movement.onEndMove += () => { bodyAnimator.SetBool("isMoving", false); };
+        bodyAnimator.SetBool("isMoving", player.movement.speed > 0 ? true : false);
     }
 }
