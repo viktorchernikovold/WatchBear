@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 10
   Speed: 12
-  DropTime: 1
+  DropTimeMin: 0.5
+  DropTimeMax: 1
   DropSpeedCurve:
     serializedVersion: 2
     m_Curve:
