@@ -27,7 +27,11 @@ public class Gun : MonoBehaviour
             Shoot();
         }
     }
-
+    public void AddAmmo(int amount)
+    {
+        currentAmmo += amount;
+        if (currentAmmo > gun.AmmoLimit) currentAmmo = gun.AmmoLimit;
+    }
     public void Shoot()
     {
         if (currentAmmo <= 0 || delay > 0f)

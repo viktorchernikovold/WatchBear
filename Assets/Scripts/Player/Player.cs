@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Gun currentWeapon;
     public PlayerLook look;
     public PlayerMovement movement;
     public LivingMixin healthSystem;
@@ -28,10 +30,17 @@ public class Player : MonoBehaviour
         movement = GetComponent<PlayerMovement>();
         healthSystem = GetComponent<LivingMixin>();
     }
-
+    public bool HasFullHP()
+    {
+        return healthSystem.health == healthSystem.maxHealth;
+    }
+    public bool HasWeapon()
+    {
+        return currentWeapon != null;
+    }
     private void OnDie()
     {
-        Debug.LogError("Death was not implemented yet!");
+        throw new NotImplementedException();
     }
     public Vector3 GetPosition()
     {

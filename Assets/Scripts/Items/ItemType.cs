@@ -4,7 +4,6 @@ using UnityEngine;
 
 public enum ItemType
 {
-    Undefined,
     Ammo,
     Health,
     Reserved1,
