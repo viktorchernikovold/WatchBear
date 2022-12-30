@@ -4,10 +4,10 @@ public class PlayerMovement : MonoBehaviour
 {
     public float Speed = 2f;
 
+    Vector2 movement;
+
     private void Update()
     {
-        Vector2 movement = Vector2.zero;
-
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
