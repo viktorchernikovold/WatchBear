@@ -24,11 +24,17 @@ public class SpawnPoint : MonoBehaviour
     {
         timer = Random.Range(TimerMin, TimerMax);
     }
+    public void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawSphere(transform.position, radius * 2);
+    }
 
     private void Update()
     {
         if (timer > 0f)
+        {
             timer -= Time.deltaTime;
+        }
         else
         {
             Instantiate(spawnee, GetRandomPointWp(), Quaternion.identity);

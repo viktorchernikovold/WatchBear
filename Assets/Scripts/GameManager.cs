@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager main;
+
+    public Objective objective;
     public float currentTime;
     public float endTime;
     public bool isPlaying;
@@ -12,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        main = this;
         currentTime = 0.0f;
         isPlaying = false;
     }

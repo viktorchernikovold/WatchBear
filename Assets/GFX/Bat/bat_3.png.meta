@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d27b637748613914cbe8b3e511adaa83
+guid: 2d9621d9d9372114fbedd0d1520363aa
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -68,7 +68,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 256
-    resizeAlgorithm: 1
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -105,7 +105,259 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: teddy_idle_0
+      name: bat_move_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe1f3b3531db5ad4f9cbba8f71ba3cd3
+      internalID: -388296396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bat_move_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8ed5fbb26e164f41b21519623cc5215
+      internalID: -520525986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bat_move_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f54005826dc26d844ba5273ba9ac97e2
+      internalID: 428735595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bat_move_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3268e3ed78135324b8fed5b360c058b8
+      internalID: 131148105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bat_move_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b928eaeb7e1434e4fa317f279040bf74
+      internalID: -1060702718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bat_move_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d32694c77ec8ad04a8997f77f546eda0
+      internalID: -1945593949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bat_attack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a46fa289dfeab7c47b090a1147ed0a7c
+      internalID: -1974923456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bat_attack_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33106fe2754611648a52511d7cce8430
+      internalID: 137134351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bat_attack_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a80f304fdb3de649bbf0523ab155c7c
+      internalID: 1663914025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bat_attack_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cf292ea9db45eb44b438f0bd4f99a57
+      internalID: 1447000421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bat_attack_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74290ce53d1da0245a0f0563ac0ef8c7
+      internalID: 1902156131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bat_attack_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 386b88d911ba8864fa84d71494e1a8f5
+      internalID: -1313438444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bat_death_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +371,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ac9af12b9005f44cac2d127679917c7
-      internalID: 1164823317
+      spriteID: 324337464ce94064397a612bdfed2826
+      internalID: 585437657
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: teddy_idle_1
+      name: bat_death_1
       rect:
         serializedVersion: 2
         x: 32
@@ -140,14 +392,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1dc8bf185b6f5194f943a139033d4bfc
-      internalID: -87092581
+      spriteID: 071b0d1da4aac5e459a4545b716a0500
+      internalID: -1366829204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: teddy_idle_2
+      name: bat_death_2
       rect:
         serializedVersion: 2
         x: 64
@@ -161,14 +413,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7532218cf23fc64a8a2be08a103bcc8
-      internalID: 1168295464
+      spriteID: 6bfc13698256af94799f2ab4636586b9
+      internalID: -233018045
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: teddy_idle_3
+      name: bat_death_3
       rect:
         serializedVersion: 2
         x: 96
@@ -182,14 +434,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a453452c9c85e154eae2f4d41259cf2f
-      internalID: 193120908
+      spriteID: c257140e66720804eb9774132bce7ab7
+      internalID: -394294130
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: teddy_idle_4
+      name: bat_death_4
       rect:
         serializedVersion: 2
         x: 128
@@ -203,14 +455,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9cfaa137a095d44898178f685a4c464
-      internalID: 847889001
+      spriteID: 58a77e5310c3d254ca0ec1f07ed4039f
+      internalID: -767001317
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: teddy_idle_5
+      name: bat_death_5
       rect:
         serializedVersion: 2
         x: 160
@@ -224,197 +476,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a7e6578880f0384389ec1daf71d1fdb
-      internalID: -1355054331
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: teddy_idle_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dffc129ea4cce854fbf0b69271f2afe6
-      internalID: -197349825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: teddy_walk_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3507b83831ef0094a9c9cd48a3db7773
-      internalID: -111297972
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: teddy_walk_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 068e88a62e91c6b4eab7f6c506bb5190
-      internalID: -1897156284
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: teddy_walk_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 09f05ff170802ed47956cf12175a70f2
-      internalID: 488442941
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: teddy_walk_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a1ae2522648d964082cf1e40aa3981c
-      internalID: -1519449465
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: teddy_walk_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f8f19ed96a561c4eb54fc9d39cc8a2e
-      internalID: -2133416340
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: teddy_walk_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ee702ac0b31ea0448846101dad0fe6a
-      internalID: -489271369
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: teddy_walk_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4b5f077240d97e846b18f9eb3eee6814
-      internalID: 1558865917
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: teddy_walk_7
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 45070df311f8f3e4d9ac1280232fe786
-      internalID: 1711415790
+      spriteID: 4c58cc1c1fcf4af479ba9573906d9f4a
+      internalID: -559039657
       vertices: []
       indices: 
       edges: []
@@ -430,22 +493,30 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      teddy_walk_7: 1711415790
-      teddy_walk_4: -2133416340
-      teddy_idle_3: 193120908
-      teddy_idle_6: -197349825
-      teddy_idle_1: -87092581
-      teddy_walk_0: -111297972
-      teddy_idle_5: -1355054331
-      teddy_walk_1: -1897156284
-      teddy_4_strip_7: 1847670175
-      teddy_idle_4: 847889001
-      teddy_walk_5: -489271369
-      teddy_walk_6: 1558865917
-      teddy_idle_2: 1168295464
-      teddy_walk_2: 488442941
-      teddy_idle_0: 1164823317
-      teddy_walk_3: -1519449465
+      bat_idle_3: -948299714
+      bat_death_5: 1663914025
+      bat_death_1: -1974923456
+      bat_move_4: -1060702718
+      bat_death_2: -1974923456
+      bat_idle_2: 1405733745
+      bat_move_2: 428735595
+      bat_attack_3: -394294130
+      bat_attack_0: 1447000421
+      bat_idle_0: 1381070193
+      bat_death_4: 137134351
+      bat_attack_5: -148116930
+      bat_idle_1: 463055395
+      bat_attack_2: -1366829204
+      bat_move_5: -1945593949
+      bat_idle_4: -2060026105
+      bat_death_0: -1974923456
+      bat_idle_5: -47640606
+      bat_move_0: -388296396
+      bat_move_1: -520525986
+      bat_death_3: -1974923456
+      bat_move_3: 131148105
+      bat_attack_4: -559039657
+      bat_attack_1: -1313438444
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

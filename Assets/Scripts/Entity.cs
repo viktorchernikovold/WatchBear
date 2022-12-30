@@ -1,8 +1,8 @@
 using UnityEngine;
 
-[RequireComponent(typeof(LivingMixin))]
 public class Entity : MonoBehaviour
 {
+    public Animator animator;
     public LivingMixin mixin;
 
     private void OnEnable()
@@ -18,20 +18,47 @@ public class Entity : MonoBehaviour
         mixin.onDeath -= this.OnDie;
     }
 
+    private void OnValidate()
+    {
+        if (animator == null)
+        {
+            if (!TryGetComponent<Animator>(out animator))
+            {
+                Debug.LogWarning($"Can't find Animator component for {gameObject.name}.");
+            }
+        }
+        if (mixin == null)
+        {
+            if (!TryGetComponent<LivingMixin>(out mixin))
+            {
+                Debug.LogError($"LivingMixin component is reqired for {gameObject.name}!");
+            }
+        }
+    }
+
     public bool HasFullHP()
     {
         return mixin.health == mixin.maxHealth;
     }
     protected virtual void OnDie()
     {
-        Destroy(this.gameObject);
+        if (animator != null)
+        {
+            animator.SetTrigger("onDeath");
+        }
     }
     protected virtual void OnHeal()
     {
-
+        if (animator != null)
+        {
+            animator.SetTrigger("onHeal");
+        }
     }
     protected virtual void OnHurt()
     {
-
+        if (animator != null)
+        {
+            animator.SetTrigger("onHurt");
+        }
     }
 }
