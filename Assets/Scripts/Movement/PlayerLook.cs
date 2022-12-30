@@ -4,6 +4,8 @@ using UnityEngine;
 public class PlayerLook : MonoBehaviour
 {
     public Transform weaponOrigin;
+    public Transform playerGraphics;
+    public Transform weaponGraphics;
 
     Camera mainCam;
 
@@ -31,5 +33,16 @@ public class PlayerLook : MonoBehaviour
     private void Update()
     {
         weaponOrigin.rotation = GetLookRotationQ();
+
+        if (GetMousePositionWp().x > transform.position.x)
+        {
+            playerGraphics.localRotation = Quaternion.Euler(0f, 180f, 0f);
+            weaponGraphics.localRotation = Quaternion.Euler(0f, 180f, -90f);
+        }
+        else
+        {
+            playerGraphics.localRotation = Quaternion.Euler(Vector3.zero);
+            weaponGraphics.localRotation = Quaternion.Euler(0f, 0f, -90f);
+        }
     }
 }
