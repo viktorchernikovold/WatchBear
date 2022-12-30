@@ -49,5 +49,7 @@ MonoBehaviour:
     m_PreInfinity: 1
     m_PostInfinity: 2
     m_RotationOrder: 4
-  HitObjects: []
+  DroppedVariant: {fileID: 0}
+  HitObjects:
+  - {fileID: 2152966808990567957, guid: 916c69a7ae48ee544a7db9e890de7c4a, type: 3}
   isFriendly: 1
