@@ -2,10 +2,8 @@ using Cinemachine;
 using UnityEngine;
 
 [RequireComponent(typeof(Player))]
-public class PlayerLook : MonoBehaviour
+public class PlayerLook : PlayerComponent
 {
-    public Player player;
-    public CinemachineVirtualCameraBase cmVirtualCamera;
     public Transform aimPoint;
     public Transform weaponOrigin;
     public Transform playerGraphics;
@@ -41,18 +39,15 @@ public class PlayerLook : MonoBehaviour
     {
         Quaternion rotation = GetLookRotationQ();
         float pointDistance = Vector2.Distance(GetMousePositionWp(), transform.position);
-        if (pointDistance > aimPointMax) pointDistance = aimPointMax;
-        Debug.Log(pointDistance);
-        weaponOrigin.rotation = rotation;
         if (pointDistance <= aimPointMin)
         {
-            cmVirtualCamera.Follow = player.transform;
+            aimPoint.localPosition = Vector3.zero;
         }
         else
         {
-            cmVirtualCamera.Follow = aimPoint;
+            aimPoint.localPosition = rotation * Vector3.up * aimPointMax;
         }
-        aimPoint.localPosition = rotation * Vector3.up * pointDistance;
+        weaponOrigin.rotation = rotation;
 
         if (GetMousePositionWp().x > transform.position.x)
         {

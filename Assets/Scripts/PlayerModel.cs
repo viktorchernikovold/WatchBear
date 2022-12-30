@@ -1,9 +1,8 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Player))]
-public class PlayerModel : MonoBehaviour
+public class PlayerModel : PlayerComponent
 {
-    [SerializeField] Player player;
     [SerializeField] Animator bodyAnimator;
 
     private void OnEnable()
