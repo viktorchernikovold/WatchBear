@@ -257,7 +257,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -431,7 +431,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &716306468
 GameObject:
@@ -553,7 +553,7 @@ Transform:
   - {fileID: 1589341742}
   - {fileID: 1753187402}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1566696064
 MonoBehaviour:
@@ -567,7 +567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6101644f56dddad48acd13e0e1518706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 2
+  Speed: 2.5
 --- !u!114 &1566696065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -595,7 +595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_health: 25
   m_maxHealth: 25
-  isFriendly: 0
+  isFriendly: 1
 --- !u!114 &1566696069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -621,6 +621,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1589341742}
   - component: {fileID: 1589341743}
+  - component: {fileID: 1589341744}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -695,6 +696,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1589341744
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589341741}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: da5ac3e64436568449a7179ad684822f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1753187401
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,7 +957,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1566696063}
   m_Lens:
     FieldOfView: 34
-    OrthographicSize: 7
+    OrthographicSize: 8
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -966,7 +987,7 @@ Transform:
   m_Children:
   - {fileID: 2039915880}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2039915879
 GameObject:
