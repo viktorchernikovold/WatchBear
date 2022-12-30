@@ -2,9 +2,13 @@ using UnityEngine;
 
 public class LivingMixin : MonoBehaviour
 {
+    public delegate void OnHealthChange();
+    public delegate void OnMaxHealthChange();
     public delegate void OnHeal();
     public delegate void OnHurt();
     public delegate void OnDeath();
+    public event OnHealthChange onHealthChange;
+    public event OnMaxHealthChange onMaxHealthChange;
     public event OnHeal onHeal;
     public event OnHurt onHurt;
     public event OnDeath onDeath;
@@ -15,10 +19,12 @@ public class LivingMixin : MonoBehaviour
         if (health > 0)
         {
             onHurt?.Invoke();
+            onHealthChange?.Invoke();
         }
         else
         {
             onDeath?.Invoke();
+            onHealthChange?.Invoke();
         }
 
         return health;
@@ -27,6 +33,7 @@ public class LivingMixin : MonoBehaviour
     {
         health += amount;
         onHeal?.Invoke();
+        onHealthChange?.Invoke();
 
         return health;
     }
@@ -38,16 +45,19 @@ public class LivingMixin : MonoBehaviour
         if (health == 0)
         {
             onDeath?.Invoke();
+            onHealthChange?.Invoke();
         }
         else
         {
             if (oldHealth > health)
             {
                 onHurt?.Invoke();
+                onHealthChange?.Invoke();
             }
             else
             {
                 onHeal?.Invoke();
+                onHealthChange?.Invoke();
             }
         }
 
@@ -56,6 +66,7 @@ public class LivingMixin : MonoBehaviour
     public void SetMaxHealth(float newHealth)
     {
         maxHealth = newHealth;
+        onMaxHealthChange?.Invoke();
     }
 
     public float health
