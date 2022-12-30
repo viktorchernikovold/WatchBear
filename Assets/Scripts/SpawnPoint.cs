@@ -15,10 +15,9 @@ public class SpawnPoint : MonoBehaviour
     {
         Vector2 point = transform.position;
         Vector2 offset = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
-        offset.Normalize();
         offset *= radius * 2;
 
-        return point * offset;
+        return point + offset;
     }
 
     private void Awake()

@@ -5959,7 +5959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnee: {fileID: 4016445227119201008, guid: 54008fcb52855cf4b928221a5459711d, type: 3}
-  radius: 2
+  radius: 0.5
   TimerMax: 2
   TimerMin: 3
 --- !u!1 &1334910251
