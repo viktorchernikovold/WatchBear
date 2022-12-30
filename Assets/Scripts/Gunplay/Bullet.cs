@@ -3,6 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public BulletStats bullet;
+    public Rigidbody2D useRigidbody;
     public float timeInAir = 0.0f;
     public float dropTime;
     public bool dropped = false;
@@ -30,7 +31,8 @@ public class Bullet : MonoBehaviour
         float timeFracture = timeInAir / dropTime;
         float speedMultiply = bullet.DropSpeedCurve.Evaluate(timeFracture);
         timeInAir += Time.deltaTime;
-        transform.Translate(Vector2.up * bullet.Speed * speedMultiply * Time.deltaTime * Time.timeScale);
+        useRigidbody.velocity = (transform.up * bullet.Speed * speedMultiply);
+        //transform.Translate(Vector2.up * bullet.Speed * speedMultiply * Time.deltaTime * Time.timeScale);
     }
 
     public void Drop()
@@ -43,21 +45,12 @@ public class Bullet : MonoBehaviour
 
         Destroy(gameObject);
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.TryGetComponent(out LivingMixin living) && bullet.isFriendly != living.isFriendly)
+        Drop();
+        if (collision.gameObject.TryGetComponent(out LivingMixin living) && bullet.isFriendly != living.isFriendly)
         {
             living.Hurt(bullet.Damage);
-
-            if (bullet.HitObjects.Length > 0)
-                foreach (GameObject go in bullet.HitObjects)
-                    Instantiate(go, transform.position, transform.rotation);
-
-            if (bullet.DroppedVariant != null)
-                Instantiate(bullet.DroppedVariant, transform.position, transform.rotation);
-
-            Destroy(gameObject);
         }
     }
 }
