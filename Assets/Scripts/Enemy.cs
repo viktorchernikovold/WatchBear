@@ -22,9 +22,9 @@ public class Enemy : MonoBehaviour
         if (attackCooldown < 0) attackCooldown = 0;
 
 
-        if (InAttackRange() && !HasCooldown())
+        if (InAttackRange())
         {
-            Attack();
+            if (!HasCooldown()) Attack();
         }
         else
         {

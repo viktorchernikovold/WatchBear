@@ -13,6 +13,6 @@ public class PlayerMovement : MonoBehaviour
 
         movement.Normalize();
 
-        transform.Translate(movement * Speed * Time.deltaTime * Time.timeScale);
+        transform.Translate(movement * Speed * Time.deltaTime * Time.timeScale, Space.World);
     }
 }
