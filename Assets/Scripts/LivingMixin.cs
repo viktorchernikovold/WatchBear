@@ -12,6 +12,7 @@ public class LivingMixin : MonoBehaviour
     public event OnHeal onHeal;
     public event OnHurt onHurt;
     public event OnDeath onDeath;
+    public bool isAlive;
 
     public float Hurt(float amount)
     {
@@ -20,11 +21,13 @@ public class LivingMixin : MonoBehaviour
         {
             onHurt?.Invoke();
             onHealthChange?.Invoke();
+            isAlive = true;
         }
         else
         {
             onDeath?.Invoke();
             onHealthChange?.Invoke();
+            isAlive = false;
         }
 
         return health;
@@ -34,7 +37,7 @@ public class LivingMixin : MonoBehaviour
         health += amount;
         onHeal?.Invoke();
         onHealthChange?.Invoke();
-
+        isAlive = health > 0 ? true : false;
         return health;
     }
     public float SetHealth(float newHealth)
@@ -46,9 +49,11 @@ public class LivingMixin : MonoBehaviour
         {
             onDeath?.Invoke();
             onHealthChange?.Invoke();
+            isAlive = false;
         }
         else
         {
+            isAlive = true;
             if (oldHealth > health)
             {
                 onHurt?.Invoke();
