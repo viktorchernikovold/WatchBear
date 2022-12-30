@@ -25,25 +25,24 @@ public class PlayerPickup : PlayerComponent
     private void OnTriggerStay2D(Collider2D collision)
     {
         Pickable pickable;
-        bool success = false;
         if (collision.gameObject.TryGetComponent<Pickable>(out pickable))
         {
+            int toPick = 0;
             switch (pickable.type)
             {
                 case ItemType.Ammo:
                     if (!player.HasWeapon())
                     {
-                        return;
+                        break;
                     }
-                    success = true;
+                    toPick = Mathf.Clamp(player.currentWeapon.gun.AmmoLimit - player.currentWeapon.currentAmmo, 0, pickable.amount);
+                    player.currentWeapon.AddAmmo(toPick);
                     break;
                 case ItemType.Health:
                     if (player.HasFullHP())
                     {
-                        return;
+                        break;
                     }
-
-                    success = true;
                     break;
                 case ItemType.Reserved1:
                     throw new NotImplementedException();
@@ -52,10 +51,7 @@ public class PlayerPickup : PlayerComponent
                 default:
                     throw new NotImplementedException();
             }
-        }
-        if (success)
-        {
-            GameObject.Destroy(pickable.gameObject);
+            pickable.Pick(toPick);
         }
     }
 

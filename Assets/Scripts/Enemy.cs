@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : Entity
 {
     public float moveSpeed;
     public float playerMeetRange;
@@ -30,6 +30,10 @@ public class Enemy : MonoBehaviour
         {
             Move();
         }
+    }
+    protected override void OnDie()
+    {
+        base.OnDie();
     }
     private void Move()
     {

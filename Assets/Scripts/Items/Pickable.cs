@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class Pickable : MonoBehaviour
 {
-    public float amount;
+    public int amount;
     public ItemType type;
+
+    public void Pick(int amount)
+    {
+        this.amount -= amount;
+        if (this.amount <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
