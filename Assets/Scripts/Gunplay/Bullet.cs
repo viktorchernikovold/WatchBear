@@ -28,12 +28,18 @@ public class Bullet : MonoBehaviour
         timeInAir += Time.deltaTime;
         transform.Translate(Vector2.up * bullet.Speed * speedMultiply * Time.deltaTime * Time.timeScale);
     }
+
     public void Drop()
     {
         transform.rotation = Quaternion.Euler(Vector3.right);
         timeInAir = 0.0f;
-        dropped = true;
+
+        foreach (GameObject go in bullet.HitObjects)
+            Instantiate(go, transform.position, transform.rotation);
+
+        Destroy(gameObject);
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out LivingMixin living) && bullet.isFriendly != living.isFriendly)
@@ -42,6 +48,8 @@ public class Bullet : MonoBehaviour
 
             foreach (GameObject go in bullet.HitObjects)
                 Instantiate(go, transform.position, transform.rotation);
+
+            Destroy(gameObject);
         }
     }
 }
