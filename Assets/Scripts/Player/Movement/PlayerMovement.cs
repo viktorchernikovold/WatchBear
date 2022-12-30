@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 2f;
     public float speed;
+    public bool canMove = true;
     public Vector2 velocity;
     private Vector2 moveInput;
     public Rigidbody2D useRigidbody;
@@ -24,8 +25,10 @@ public class PlayerMovement : MonoBehaviour
         {
             onMove?.Invoke(this.velocity);
         }
-
-        Vector2 deltaPos = moveInput * moveSpeed;
-        useRigidbody.velocity = deltaPos;
+        if (canMove)
+        {
+            Vector2 deltaPos = moveInput * moveSpeed;
+            useRigidbody.velocity = deltaPos;
+        }
     }
 }

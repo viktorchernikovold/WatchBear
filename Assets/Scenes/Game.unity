@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 446155867}
   - component: {fileID: 446155866}
   m_Layer: 0
-  m_Name: Square
+  m_Name: active-zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -482,7 +482,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -5
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.8349056, g: 0.9495453, b: 1, a: 0.16862746}
+  m_Color: {r: 0.8349056, g: 0.9495453, b: 1, a: 0.09803922}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5742,6 +5742,69 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1156282524
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1156282526}
+  - component: {fileID: 1156282525}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1156282525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156282524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea6410a809ffd94f84cc8703dba4a71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTime: 0
+  endTime: 24
+  isPlaying: 0
+  matchPoints:
+  - timePoint: 0
+    isBoss: 0
+  - timePoint: 2
+    isBoss: 0
+  - timePoint: 4
+    isBoss: 0
+  - timePoint: 8
+    isBoss: 0
+  - timePoint: 12
+    isBoss: 0
+  - timePoint: 16
+    isBoss: 0
+  - timePoint: 20
+    isBoss: 1
+  currentMatchPoint: 0
+--- !u!4 &1156282526
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156282524}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.2195433, y: 2.272948, z: -0.12147054}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1176701599
 GameObject:
   m_ObjectHideFlags: 0
@@ -6022,6 +6085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   speed: 0
+  canMove: 1
   velocity: {x: 0, y: 0}
   useRigidbody: {fileID: 1566696072}
 --- !u!114 &1566696065
@@ -6042,7 +6106,7 @@ MonoBehaviour:
   weaponOrigin: {fileID: 1753187402}
   playerGraphics: {fileID: 1589341742}
   weaponGraphics: {fileID: 716306469}
-  aimPointMax: 4
+  aimPointMax: 2
   aimPointMin: 1
 --- !u!114 &1566696067
 MonoBehaviour:
