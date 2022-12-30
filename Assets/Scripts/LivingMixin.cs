@@ -17,6 +17,7 @@ public class LivingMixin : MonoBehaviour
     public float Hurt(float amount)
     {
         health -= amount;
+
         if (health > 0)
         {
             onHurt?.Invoke();
