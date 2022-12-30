@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Player))]
 public class PlayerLook : PlayerComponent
 {
+    public Camera aimCamera;
     public Transform aimPoint;
     public Transform weaponOrigin;
     public Transform playerGraphics;
@@ -12,12 +13,7 @@ public class PlayerLook : PlayerComponent
     public float aimPointMax = 5f;
     public float aimPointMin = 1f;
 
-    Camera mainCam;
 
-    private void Awake()
-    {
-        mainCam = Camera.main;
-    }
 
     public float GetLookRotation()
     {
@@ -32,20 +28,21 @@ public class PlayerLook : PlayerComponent
 
     public Vector2 GetMousePositionWp()
     {
-        return mainCam.ScreenToWorldPoint(Input.mousePosition);
+        return aimCamera.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void Update()
     {
         Quaternion rotation = GetLookRotationQ();
         float pointDistance = Vector2.Distance(GetMousePositionWp(), transform.position);
+        if (pointDistance > aimPointMax) pointDistance = aimPointMax;
         if (pointDistance <= aimPointMin)
         {
             aimPoint.localPosition = Vector3.zero;
         }
         else
         {
-            aimPoint.localPosition = rotation * Vector3.up * aimPointMax;
+            aimPoint.localPosition = rotation * Vector3.up * pointDistance;
         }
         weaponOrigin.rotation = rotation;
 
