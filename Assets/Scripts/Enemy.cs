@@ -15,12 +15,15 @@ public class Enemy : Entity
 
     public LivingMixin target;
 
+    private void Awake()
+    {
+        
+    }
 
     private void Update()
     {
         attackCooldown -= Time.deltaTime;
         if (attackCooldown < 0) attackCooldown = 0;
-
 
         if (InAttackRange())
         {

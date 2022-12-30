@@ -13,7 +13,8 @@ public class Player : Entity
 
     private void Awake()
     {
-        main = this;
+        if (main == null) main = this;
+        else Destroy(gameObject);
     }
     private void OnValidate()
     {
