@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83333fba00c6ea646acd3aaf29b0e572, type: 3}
   m_Name: Nerf
   m_EditorClassIdentifier: 
-  RPS: 2
+  RPS: 2.5
   AmmoLimit: 500
   BulletToSpawn: {fileID: 536151930024775730, guid: 22a5d00521bf4fd4ebf9b1dde152bfd1, type: 3}
