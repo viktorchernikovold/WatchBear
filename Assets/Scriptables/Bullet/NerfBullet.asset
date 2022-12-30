@@ -14,5 +14,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 10
   Speed: 7
+  DropTime: 1
+  DropSpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0.008688756
+      outSlope: -0.010430011
+      tangentMode: 1
+      weightedMode: 1
+      inWeight: 0
+      outWeight: 0.8803991
+    - serializedVersion: 3
+      time: 0.77054316
+      value: 0.6634459
+      inSlope: -1.1346401
+      outSlope: -1.5536742
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.12542446
+      outWeight: 0.30996454
+    - serializedVersion: 3
+      time: 1
+      value: 0.002357483
+      inSlope: -5.6470375
+      outSlope: -5.6470375
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.09079404
+      outWeight: 0
+    m_PreInfinity: 1
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   HitObjects: []
   isFriendly: 1
