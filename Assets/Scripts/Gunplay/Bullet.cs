@@ -5,13 +5,18 @@ public class Bullet : MonoBehaviour
 {
     public BulletStats bullet;
     public float timeInAir = 0.0f;
+    public float dropTime;
     public bool dropped = false;
 
+    private void Start()
+    {
+        dropTime = UnityEngine.Random.Range(bullet.DropTimeMin, bullet.DropTimeMax);
+    }
     private void Update()
     {
         if (!dropped)
         {
-            if (timeInAir < bullet.DropTime)
+            if (timeInAir < dropTime)
             {
                 Fly();
             }
@@ -23,7 +28,7 @@ public class Bullet : MonoBehaviour
     }
     public void Fly()
     {
-        float timeFracture = timeInAir / bullet.DropTime;
+        float timeFracture = timeInAir / dropTime;
         float speedMultiply = bullet.DropSpeedCurve.Evaluate(timeFracture);
         timeInAir += Time.deltaTime;
         transform.Translate(Vector2.up * bullet.Speed * speedMultiply * Time.deltaTime * Time.timeScale);
@@ -31,7 +36,7 @@ public class Bullet : MonoBehaviour
 
     public void Drop()
     {
-        transform.rotation = Quaternion.Euler(Vector3.right);
+        transform.rotation = Quaternion.Euler(0, 0, 90f);
         timeInAir = 0.0f;
 
         foreach (GameObject go in bullet.HitObjects)
