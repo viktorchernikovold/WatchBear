@@ -482,6 +482,7 @@ GameObject:
   - component: {fileID: 1566696063}
   - component: {fileID: 1566696064}
   - component: {fileID: 1566696065}
+  - component: {fileID: 1566696066}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -531,6 +532,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationSpeed: 720
+--- !u!114 &1566696066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566696062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb2d542a33331c498fab29c5af26e86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gun: {fileID: 11400000, guid: d06e29f5c340c034ba21e8d0a3297d3f, type: 2}
+  currentAmmo: 0
 --- !u!1 &2004282246
 GameObject:
   m_ObjectHideFlags: 0
