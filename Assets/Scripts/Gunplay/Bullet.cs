@@ -39,8 +39,7 @@ public class Bullet : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, 90f);
         timeInAir = 0.0f;
 
-        foreach (GameObject go in bullet.HitObjects)
-            Instantiate(go, transform.position, transform.rotation);
+        Instantiate(bullet.DroppedVariant, transform.position, transform.rotation);
 
         Destroy(gameObject);
     }
@@ -53,6 +52,8 @@ public class Bullet : MonoBehaviour
 
             foreach (GameObject go in bullet.HitObjects)
                 Instantiate(go, transform.position, transform.rotation);
+
+            Instantiate(bullet.DroppedVariant, transform.position, transform.rotation);
 
             Destroy(gameObject);
         }

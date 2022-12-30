@@ -7,6 +7,9 @@ public class Gun : MonoBehaviour
     [HideInInspector]
     public int currentAmmo;
 
+    [SerializeField]
+    ParticleSystem par;
+
     float delay;
 
     private void Awake()
@@ -33,5 +36,8 @@ public class Gun : MonoBehaviour
         currentAmmo -= 1;
         delay = 1f / gun.RPS;
         Instantiate(gun.BulletToSpawn, transform.position, transform.rotation);
+
+        if (par != null)
+            par.Play();
     }
 }

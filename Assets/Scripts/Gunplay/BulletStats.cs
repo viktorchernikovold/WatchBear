@@ -10,6 +10,7 @@ public class BulletStats : ScriptableObject
     public float DropTimeMax;
     public AnimationCurve DropSpeedCurve;
 
+    public GameObject DroppedVariant;
     public GameObject[] HitObjects;
 
     public bool isFriendly;
