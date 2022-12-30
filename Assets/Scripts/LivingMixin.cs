@@ -72,4 +72,6 @@ public class LivingMixin : MonoBehaviour
     private float m_health;
     [SerializeField]
     private float m_maxHealth;
+
+    public bool isFriendly;
 }
