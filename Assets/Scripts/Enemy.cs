@@ -15,11 +15,6 @@ public class Enemy : Entity
 
     public LivingMixin target;
 
-    private void Awake()
-    {
-        
-    }
-
     private void Update()
     {
         attackCooldown -= Time.deltaTime;
@@ -40,12 +35,18 @@ public class Enemy : Entity
     }
     private void Move()
     {
+        if (target == null)
+            return;
+
         Vector2 direction = target.transform.position - transform.position;
         direction.Normalize();
         transform.Translate(direction * Time.deltaTime);
     }
     private void Attack()
     {
+        if (target == null)
+            return;
+
         attackCooldown = attackDelay;
         target.Hurt(attackDamage);
     }
