@@ -13,10 +13,17 @@ public class Enemy : Entity
     public float attackDelay;
     public float attackCooldown;
 
-    public LivingMixin target;
+    public Entity target;
 
-    private void Update()
+    protected virtual void Update()
     {
+        if (target == null)
+        {
+            if (GameManager.main.objective == null || GameManager.main.objective.mixin.isAlive)
+            {
+                return;
+            }
+        }
         attackCooldown -= Time.deltaTime;
         if (attackCooldown < 0) attackCooldown = 0;
 
@@ -33,24 +40,18 @@ public class Enemy : Entity
     {
         base.OnDie();
     }
-    private void Move()
+    protected virtual void Move()
     {
-        if (target == null)
-            return;
-
         Vector2 direction = target.transform.position - transform.position;
         direction.Normalize();
         transform.Translate(direction * Time.deltaTime);
     }
-    private void Attack()
+    protected virtual void Attack()
     {
-        if (target == null)
-            return;
-
         attackCooldown = attackDelay;
-        target.Hurt(attackDamage);
+        target.mixin.Hurt(attackDamage);
     }
-    private bool InAttackRange()
+    protected virtual bool InAttackRange()
     {
         if (target == null) return false;
         return Vector2.Distance(transform.position, target.transform.position) <= attackRange;
