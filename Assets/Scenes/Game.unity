@@ -302,9 +302,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnee: {fileID: 3405794410095615144, guid: 3cd029e8838c8d2428130989bc86b711, type: 3}
+  spawnEffect: {fileID: 2152966808990567957, guid: ae563af7d8da911429a69f7e2f91ad4c, type: 3}
   radius: 1.5
   TimerMax: 6
   TimerMin: 4
+  PlayerHPLowerThan: 8
 --- !u!1 &359257154
 GameObject:
   m_ObjectHideFlags: 0
@@ -5356,9 +5358,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnee: {fileID: 4016445227119201008, guid: 54008fcb52855cf4b928221a5459711d, type: 3}
+  spawnEffect: {fileID: 2152966808990567957, guid: 6c4d6f8ad6f6d414b8829bbc5bb952b9, type: 3}
   radius: 1
   TimerMax: 4
   TimerMin: 5
+  PlayerHPLowerThan: 9
 --- !u!4 &492047544
 Transform:
   m_ObjectHideFlags: 0
@@ -6023,9 +6027,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnee: {fileID: 4016445227119201008, guid: 54008fcb52855cf4b928221a5459711d, type: 3}
+  spawnEffect: {fileID: 2152966808990567957, guid: 6c4d6f8ad6f6d414b8829bbc5bb952b9, type: 3}
   radius: 1
   TimerMax: 4
   TimerMin: 5
+  PlayerHPLowerThan: 9
 --- !u!4 &707900535
 Transform:
   m_ObjectHideFlags: 0
@@ -6413,7 +6419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4016445227119201012, guid: 2c16ff3cfda6e8a459bb5a1edb3a6c4e, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4016445227119201012, guid: 2c16ff3cfda6e8a459bb5a1edb3a6c4e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7023,9 +7029,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnee: {fileID: 4016445227119201008, guid: 54008fcb52855cf4b928221a5459711d, type: 3}
+  spawnEffect: {fileID: 2152966808990567957, guid: 6c4d6f8ad6f6d414b8829bbc5bb952b9, type: 3}
   radius: 1
   TimerMax: 6
   TimerMin: 8
+  PlayerHPLowerThan: 9
 --- !u!1 &1328297112
 GameObject:
   m_ObjectHideFlags: 0
@@ -7216,9 +7224,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnee: {fileID: 4016445227119201008, guid: 54008fcb52855cf4b928221a5459711d, type: 3}
+  spawnEffect: {fileID: 2152966808990567957, guid: 6c4d6f8ad6f6d414b8829bbc5bb952b9, type: 3}
   radius: 1
   TimerMax: 3
   TimerMin: 4
+  PlayerHPLowerThan: 9
 --- !u!4 &1383840960
 Transform:
   m_ObjectHideFlags: 0
@@ -7848,7 +7858,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1655893902
 MonoBehaviour:
@@ -8059,9 +8069,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnee: {fileID: 4016445227119201008, guid: 54008fcb52855cf4b928221a5459711d, type: 3}
+  spawnEffect: {fileID: 2152966808990567957, guid: 6c4d6f8ad6f6d414b8829bbc5bb952b9, type: 3}
   radius: 1
   TimerMax: 5
   TimerMin: 6
+  PlayerHPLowerThan: 9
 --- !u!4 &1708343179
 Transform:
   m_ObjectHideFlags: 0
@@ -8746,9 +8758,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnee: {fileID: 4016445227119201008, guid: 54008fcb52855cf4b928221a5459711d, type: 3}
+  spawnEffect: {fileID: 2152966808990567957, guid: 6c4d6f8ad6f6d414b8829bbc5bb952b9, type: 3}
   radius: 1
   TimerMax: 2
   TimerMin: 3
+  PlayerHPLowerThan: 9
 --- !u!4 &2022937199
 Transform:
   m_ObjectHideFlags: 0
