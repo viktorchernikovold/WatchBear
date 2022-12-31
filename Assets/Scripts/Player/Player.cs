@@ -31,7 +31,7 @@ public class Player : Entity
     {
         base.OnDie();
     }
-    public Vector3 GetPosition()
+    public Vector2 GetPosition()
     {
         return transform.position;
     }

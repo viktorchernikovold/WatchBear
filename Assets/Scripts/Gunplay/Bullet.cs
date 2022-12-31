@@ -52,7 +52,10 @@ public class Bullet : MonoBehaviour
 
         if (collision.gameObject.TryGetComponent(out LivingMixin living) && bullet.isFriendly != living.isFriendly)
         {
-            living.Hurt(bullet.Damage);
+            if (!living.isFriendly)
+            {
+                living.Hurt(bullet.Damage);
+            }
         }
     }
 }

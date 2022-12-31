@@ -46,6 +46,7 @@ public class Entity : MonoBehaviour
         {
             animator.SetTrigger("onDeath");
         }
+        Destroy(gameObject);
     }
     protected virtual void OnHeal()
     {

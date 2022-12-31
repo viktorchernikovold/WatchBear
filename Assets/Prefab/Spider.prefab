@@ -176,8 +176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAlive: 0
-  m_health: 15
-  m_maxHealth: 15
+  m_health: 1
+  m_maxHealth: 1
   isFriendly: 0
 --- !u!61 &4016445227119201014
 BoxCollider2D:

@@ -17,13 +17,26 @@ public class Enemy : Entity
 
     protected virtual void Update()
     {
-        if (target == null)
+        bool flag1 = GameManager.main.objective != null || GameManager.main.objective.mixin.isAlive; // is Objective Alive
+        float num1 = Vector2.Distance(Player.main.GetPosition(), transform.position);
+        float num2 = flag1 ? Vector2.Distance(GameManager.main.objective.transform.position, transform.position) : 1000f;
+
+        if (target == null || !target.mixin.isAlive)
         {
-            if (GameManager.main.objective == null || GameManager.main.objective.mixin.isAlive)
+            if (flag1)
             {
-                return;
+                target = GameManager.main.objective;
             }
         }
+        if (num1 <= playerMeetRange && num2 > num1)
+        {
+            target = Player.main;
+        }
+        if ((num1 > playerFollowRange || num2 < num1) && flag1)
+        {
+            target = GameManager.main.objective;
+        }
+
         attackCooldown -= Time.deltaTime;
         if (attackCooldown < 0) attackCooldown = 0;
 

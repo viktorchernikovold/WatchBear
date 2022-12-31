@@ -14,6 +14,10 @@ public class LivingMixin : MonoBehaviour
     public event OnDeath onDeath;
     public bool isAlive;
 
+    private void OnEnable()
+    {
+        isAlive = health > 0 ? true : false;
+    }
     public float Hurt(float amount)
     {
         health -= amount;
