@@ -105,259 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spidey_death_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b23a685c47855cb4cbaea0020f7d4bb0
-      internalID: 66740151
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spidey_death_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 69caf07f474bddc4ca8f4d7f4b5517ec
-      internalID: -1394669758
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spidey_death_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a602cdb06cdd003468f840a9ee2437fe
-      internalID: -765533372
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spidey_death_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3d8a1f5886540a941a32f1f76bdc97a9
-      internalID: 1432844540
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spidey_death_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff2eb076b5d6d91428f022b8ac760cb6
-      internalID: 457845960
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spidey_death_5
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cca0ca977e541e947bd6edf67f968b93
-      internalID: -1958088353
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spidey_move_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a45103274ac826340a78ee737113d9ba
-      internalID: -300303583
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spidey_move_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6db17c2f92b164b47bfe5c380951b430
-      internalID: -234483940
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spidey_move_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b534f23b5fdef249b8318588091e26a
-      internalID: -2012977571
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spidey_move_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7cefcdab68365384aa821024e477598a
-      internalID: 1129566969
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spidey_move_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c17471203a42308479780f1aacaa6b2c
-      internalID: 1152768846
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spidey_move_5
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e2ee1a1bd2da3dc4f8639d0f9e8b5208
-      internalID: -987301223
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spidey_idle_0
+      name: spider_4_0
       rect:
         serializedVersion: 2
         x: 0
@@ -365,20 +113,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ac3bbddfb5cff4449a931044f456688
-      internalID: 833084207
+      spriteID: 9bacaa9eb32b4354c8b9db925f2c8c3b
+      internalID: 1328594103
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spidey_idle_1
+      name: spider_4_1
       rect:
         serializedVersion: 2
         x: 16
@@ -386,20 +134,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d8819672d8f1834780e1c518f00a51b
-      internalID: -909810325
+      spriteID: 69d7dda232f53484c84fcf77f7e3d6f6
+      internalID: -91650962
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spidey_idle_2
+      name: spider_4_2
       rect:
         serializedVersion: 2
         x: 32
@@ -407,20 +155,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89693efd72eee594b8d23d84bec07b12
-      internalID: 1231298003
+      spriteID: 98b654b9c1deb44409834a6beaaa6f7a
+      internalID: -158105169
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spidey_idle_3
+      name: spider_4_3
       rect:
         serializedVersion: 2
         x: 48
@@ -428,20 +176,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0899f100b6aa847459e2afe9786a16fe
-      internalID: -1594267595
+      spriteID: b5f87219666ce8e47ac13f9cbc2f2f81
+      internalID: 982841041
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spidey_idle_4
+      name: spider_4_4
       rect:
         serializedVersion: 2
         x: 64
@@ -449,20 +197,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28a19a6de5212954bbbd130142db6b77
-      internalID: -141864793
+      spriteID: 11fee12c50245834aa8ea773fda6792b
+      internalID: -1976314251
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spidey_idle_5
+      name: spider_4_5
       rect:
         serializedVersion: 2
         x: 80
@@ -470,20 +218,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5e24df1e11cf3448807a1c324fe113d
-      internalID: 2067359474
+      spriteID: 972b3125f4b216742af39a771ca2633e
+      internalID: 1656208513
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spidey_attack_0
+      name: spider_4_6
       rect:
         serializedVersion: 2
         x: 0
@@ -491,20 +239,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22a1d3bbdd1209b489e66b27940592d9
-      internalID: -1531852274
+      spriteID: f0973c0643ebbe44b8654369c64abf4d
+      internalID: 2098401388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spidey_attack_1
+      name: spider_4_7
       rect:
         serializedVersion: 2
         x: 16
@@ -512,20 +260,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31f858c867a77904e8ee3d5c02715e3b
-      internalID: -307524985
+      spriteID: 7e2b548e67c6b004ea94f212c7cccc92
+      internalID: -1411704089
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spidey_attack_2
+      name: spider_4_8
       rect:
         serializedVersion: 2
         x: 32
@@ -533,20 +281,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2d9f088ea29f7042a5799458c6ba99a
-      internalID: 567775456
+      spriteID: 3031e1a93d1615240829aefef7a43c15
+      internalID: 1173130347
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spidey_attack_3
+      name: spider_4_9
       rect:
         serializedVersion: 2
         x: 48
@@ -554,20 +302,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f34e5f7a2860074d9c7bb2ef68c2834
-      internalID: 1800268191
+      spriteID: 5740faa5e8a7a4e408013eacb48d8c09
+      internalID: -2127676772
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spidey_attack_4
+      name: spider_4_10
       rect:
         serializedVersion: 2
         x: 64
@@ -575,20 +323,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebf6bf38beafd1c42876bbd5e8f868bb
-      internalID: -1955934495
+      spriteID: 4a68e4b14ab163b44911399b0a160b76
+      internalID: 645469684
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spidey_attack_5
+      name: spider_4_11
       rect:
         serializedVersion: 2
         x: 80
@@ -596,14 +344,98 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b27ad35b5fb98c41ac0004942917963
-      internalID: -570080899
+      spriteID: ed26323c3ac18ce47b17586d115d04f0
+      internalID: -581360241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spider_4_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57c64cb53986d5a4788a5e2d500df40b
+      internalID: 899319644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spider_4_13
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 620e278b7ebadc84dae783ae4095baaa
+      internalID: -430230148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spider_4_14
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5ddf4023f0716a428df4aa3c46a0770
+      internalID: -1009219978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spider_4_15
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f41ec9fb3c947774c93a93d99abf7094
+      internalID: -613786491
       vertices: []
       indices: 
       edges: []
@@ -619,30 +451,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      spidey_death_0: 66740151
-      spidey_move_5: -987301223
-      spidey_idle_0: 833084207
-      spidey_idle_4: -141864793
-      spidey_move_2: -2012977571
-      spidey_attack_4: -1955934495
-      spidey_attack_0: -1531852274
-      spidey_attack_1: -307524985
-      spidey_death_1: -1394669758
-      spidey_idle_3: -1594267595
-      spidey_idle_5: 2067359474
-      spidey_death_3: 1432844540
-      spidey_idle_2: 1231298003
-      spidey_move_3: 1129566969
-      spidey_attack_5: -570080899
-      spidey_idle_1: -909810325
-      spidey_death_2: -765533372
-      spidey_move_4: 1152768846
-      spidey_attack_3: 1800268191
-      spidey_move_1: -234483940
-      spidey_move_0: -300303583
-      spidey_attack_2: 567775456
-      spidey_death_5: -1958088353
-      spidey_death_4: 457845960
+      spider_4_2: -158105169
+      spider_4_14: -1009219978
+      spider_4_0: 1328594103
+      spider_4_10: 645469684
+      spider_4_11: -581360241
+      spider_4_15: -613786491
+      spider_4_13: -430230148
+      spider_4_8: 1173130347
+      spider_4_3: 982841041
+      spider_4_1: -91650962
+      spider_4_7: -1411704089
+      spider_4_4: -1976314251
+      spider_4_12: 899319644
+      spider_4_9: -2127676772
+      spider_4_5: 1656208513
+      spider_4_6: 2098401388
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
