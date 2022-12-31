@@ -3,11 +3,14 @@ using UnityEngine;
 public class SpawnPoint : MonoBehaviour
 {
     public GameObject spawnee;
+    public GameObject spawnEffect;
 
     public float radius;
 
     public float TimerMax;
     public float TimerMin;
+
+    public int PlayerHPLowerThan;
 
     float timer;
 
@@ -37,7 +40,13 @@ public class SpawnPoint : MonoBehaviour
         }
         else
         {
-            Instantiate(spawnee, GetRandomPointWp(), Quaternion.identity);
+            if (Player.main.mixin.health >= PlayerHPLowerThan)
+                return;
+
+            Transform tr = Instantiate(spawnee, GetRandomPointWp(), Quaternion.identity).transform;
+
+            Instantiate(spawnEffect, tr.position, tr.rotation);
+
             timer = Random.Range(TimerMin, TimerMax);
         }
     }
