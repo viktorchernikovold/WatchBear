@@ -1,3 +1,4 @@
+using Game.Utils;
 using UnityEngine;
 
 public class Entity : MonoBehaviour
@@ -49,6 +50,8 @@ public class Entity : MonoBehaviour
     }
     protected virtual void OnDie()
     {
+        if (deathSound != null)
+            AudioSystem.PlaySound(deathSound, transform.position, 1f, 128);
         if (deathObject != null)
             Instantiate(deathObject, transform.position, transform.rotation);
         Destroy(gameObject);
@@ -56,11 +59,15 @@ public class Entity : MonoBehaviour
 
     protected virtual void OnHeal()
     {
-        
+        if (healSound != null)
+            AudioSystem.PlaySound(healSound, transform.position, 1f, 128);
     }
 
     protected virtual void OnHurt()
     {
+        if (hurtSound != null)
+            AudioSystem.PlaySound(hurtSound, transform.position, 1f, 128);
+
         if (hurtObject != null)
             Instantiate(hurtObject, transform.position, transform.rotation);
     }

@@ -88,7 +88,7 @@ public class Enemy : Entity
     }
     private void DestroySelf()
     {
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 
     protected virtual void Move()
