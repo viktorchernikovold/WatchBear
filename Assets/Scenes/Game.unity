@@ -6846,8 +6846,9 @@ MonoBehaviour:
   currentTime: 0
   endTime: 360
   isPlaying: 0
+  hasLampBroke: 0
   matchPoints:
-  - timePoint: 300
+  - timePoint: 0
     isBoss: 0
     objects:
     - {fileID: 1276197881}
@@ -6867,7 +6868,7 @@ MonoBehaviour:
     isBoss: 0
     objects:
     - {fileID: 2022937197}
-  - timePoint: 0
+  - timePoint: 300
     isBoss: 1
     objects:
     - {fileID: 707900533}
