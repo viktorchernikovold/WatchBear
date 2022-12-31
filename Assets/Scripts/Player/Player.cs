@@ -29,7 +29,7 @@ public class Player : Entity
 
     protected override void OnDie()
     {
-        base.OnDie();
+        GameManager.main.End(false);
     }
     public Vector2 GetPosition()
     {

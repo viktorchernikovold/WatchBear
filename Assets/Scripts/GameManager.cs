@@ -65,6 +65,8 @@ public class GameManager : MonoBehaviour
             return;
         }
         onEnd?.Invoke();
+        Player.main.transform.position = new Vector3(0, 10000, 0);
+        Player.main.mixin.Heal(1000);
         matchPoints[currentMatchPoint].Disactivate();
         isPlaying = false;
         currentTime = 0f;
