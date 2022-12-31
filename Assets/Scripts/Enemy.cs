@@ -43,12 +43,14 @@ public class Enemy : Entity
         if (attackCooldown < 0) attackCooldown = 0;
         if (InAttackRange())
         {
+            animator.SetBool("isMoving", false);
             if (!HasCooldown()) Attack();
         }
         else
         {
             if (target != null)
             {
+                animator.SetBool("isMoving", true);
                 Move();
             }
             return;
@@ -58,10 +60,7 @@ public class Enemy : Entity
     {
         base.OnDie();
     }
-    protected virtual void LateUpdate()
-    {
-        animator.SetBool("isMoving", useRigidbody.velocity.magnitude > 0);
-    }
+
     protected virtual void Move()
     {
         Vector2 direction = target.transform.position - transform.position;
@@ -69,16 +68,19 @@ public class Enemy : Entity
         direction *= moveSpeed;
         useRigidbody.velocity = direction;
     }
+
     protected virtual void Attack()
     {
         attackCooldown = attackDelay;
         target.mixin.Hurt(attackDamage);
     }
+
     protected virtual bool InAttackRange()
     {
         if (target == null) return false;
         return Vector2.Distance(transform.position, target.transform.position) <= attackRange;
     }
+    
     private bool HasCooldown()
     {
         return attackCooldown != 0;
