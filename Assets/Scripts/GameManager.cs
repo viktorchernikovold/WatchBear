@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public UnityEvent onBegin;
     public UnityEvent onEnd;
 
+    [SerializeField] GameObject objective_prefab;
+
     private void Awake()
     {
         main = this;
@@ -48,10 +50,11 @@ public class GameManager : MonoBehaviour
             objective = GameObject.FindObjectOfType<Objective>();
             if (objective == null)
             {
-                //TODO SPAWN OBJECTIVE IN CASE THERE ARE NO OBJECTIVE
-                throw new NotImplementedException();
+                objective = GameObject.Instantiate(objective_prefab).GetComponent<Objective>();
             }
         }
+        Player.main.transform.position = playerSpawn.position;
+        objective.transform.position = objectiveSpawn.position;
         onBegin?.Invoke();
     }
 
