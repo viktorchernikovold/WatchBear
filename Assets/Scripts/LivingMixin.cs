@@ -18,7 +18,7 @@ public class LivingMixin : MonoBehaviour
     {
         isAlive = health > 0;
     }
-    public float Hurt(float amount)
+    public int Hurt(int amount)
     {
         health -= amount;
 
@@ -37,7 +37,7 @@ public class LivingMixin : MonoBehaviour
 
         return health;
     }
-    public float Heal(float amount)
+    public int Heal(int amount)
     {
         health += amount;
         onHeal?.Invoke();
@@ -45,7 +45,7 @@ public class LivingMixin : MonoBehaviour
         isAlive = health > 0 ? true : false;
         return health;
     }
-    public float SetHealth(float newHealth)
+    public int SetHealth(int newHealth)
     {
         float oldHealth = health;
         health = newHealth;
@@ -73,26 +73,26 @@ public class LivingMixin : MonoBehaviour
 
         return health;
     }
-    public void SetMaxHealth(float newHealth)
+    public void SetMaxHealth(int newHealth)
     {
         maxHealth = newHealth;
         onMaxHealthChange?.Invoke();
     }
 
-    public float health
+    public int health
     {
         get => m_health;
-        private set => m_health = Mathf.Clamp(value, 0f, maxHealth);
+        private set => m_health = Mathf.Clamp(value, 0, maxHealth);
     }
-    public float maxHealth
+    public int maxHealth
     {
         get => m_maxHealth;
-        private set => m_maxHealth = Mathf.Clamp(value, 1f, Mathf.Infinity);
+        private set => m_maxHealth = Mathf.Clamp(value, 1, 1000);
     }
     [SerializeField]
-    private float m_health;
+    private int m_health;
     [SerializeField]
-    private float m_maxHealth;
+    private int m_maxHealth;
 
     public bool isFriendly;
 }

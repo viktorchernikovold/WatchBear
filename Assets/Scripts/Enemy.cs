@@ -9,7 +9,7 @@ public class Enemy : Entity
     public float playerMeetRange;
     public float playerFollowRange;
     public float attackRange;
-    public float attackDamage;
+    public int attackDamage;
     public float attackDelay;
     public float attackCooldown;
 

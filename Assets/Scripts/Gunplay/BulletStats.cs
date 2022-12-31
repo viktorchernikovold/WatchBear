@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Bullet", menuName = "Bullet")]
 public class BulletStats : ScriptableObject
 {
-    public float Damage = 10f;
+    public int Damage = 1;
     public float Speed = 7f;
 
     public float DropTimeMin;
