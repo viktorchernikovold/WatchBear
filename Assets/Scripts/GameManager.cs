@@ -32,11 +32,6 @@ public class GameManager : MonoBehaviour
         }
 
     }
-    private void OnEnable()
-    {
-        Debug.Log("OnBegin");
-        Begin();
-    }
 
     public void Begin()
     {
