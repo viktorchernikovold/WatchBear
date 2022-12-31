@@ -162,7 +162,9 @@ MonoBehaviour:
   attackDamage: 2
   attackDelay: 0.75
   attackCooldown: 0
+  isMoving: 0
   target: {fileID: 0}
+  useRigidbody: {fileID: 4016445227119201013}
 --- !u!114 &4016445227119201009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,4 +227,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4

@@ -14,11 +14,12 @@ public class Enemy : Entity
     public float attackCooldown;
 
     public Entity target;
+    public Rigidbody2D useRigidbody;
 
     protected virtual void Update()
     {
         bool flag1 = GameManager.main.objective != null || GameManager.main.objective.mixin.isAlive; // is Objective Alive
-        float num1 = Vector2.Distance(Player.main.GetPosition(), transform.position);
+        float num1 = Player.main != null ? Vector2.Distance(Player.main.GetPosition(), transform.position) : 1000f;
         float num2 = flag1 ? Vector2.Distance(GameManager.main.objective.transform.position, transform.position) : 1000f;
 
         if (target == null || !target.mixin.isAlive)
@@ -32,7 +33,7 @@ public class Enemy : Entity
         {
             target = Player.main;
         }
-        if ((num1 > playerFollowRange || num2 < num1) && flag1)
+        if ((num1 > playerFollowRange || num2 <= num1) && flag1)
         {
             target = GameManager.main.objective;
         }
@@ -46,18 +47,27 @@ public class Enemy : Entity
         }
         else
         {
-            Move();
+            if (target != null)
+            {
+                Move();
+            }
+            return;
         }
     }
     protected override void OnDie()
     {
         base.OnDie();
     }
+    protected virtual void LateUpdate()
+    {
+        animator.SetBool("isMoving", useRigidbody.velocity.magnitude > 0);
+    }
     protected virtual void Move()
     {
         Vector2 direction = target.transform.position - transform.position;
         direction.Normalize();
-        transform.Translate(direction * Time.deltaTime);
+        direction *= moveSpeed;
+        useRigidbody.velocity = direction;
     }
     protected virtual void Attack()
     {

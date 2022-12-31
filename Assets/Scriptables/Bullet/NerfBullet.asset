@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88587536d492e6d4cbfb8c711de103a3, type: 3}
   m_Name: NerfBullet
   m_EditorClassIdentifier: 
-  Damage: 10
+  Damage: 1
   Speed: 12
   DropTimeMin: 0.5
   DropTimeMax: 1
