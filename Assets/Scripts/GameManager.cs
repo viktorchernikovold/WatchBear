@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
         currentTime = 0.0f;
         isPlaying = false;
     }
+
     public void Begin()
     {
         if (isPlaying)
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
         currentTime = 0.0f;
         currentMatchPoint = 0;
     }
+
     public void End(bool success)
     {
         if (!isPlaying)
@@ -38,6 +40,7 @@ public class GameManager : MonoBehaviour
         isPlaying = false;
         currentTime = 0f;
         currentMatchPoint = 0;
+
         if (success)
         {
             throw new NotImplementedException();
@@ -68,7 +71,12 @@ public class GameManager : MonoBehaviour
     }
     private void SetMatchPoint(int point)
     {
-        this.currentMatchPoint = point;
+        currentMatchPoint = point;
+
+        foreach (MatchPoint mp in matchPoints)
+            mp.ObjectToEnable.SetActive(false);
+
+        matchPoints[point].ObjectToEnable.SetActive(true);
     }
 
     [Serializable]
@@ -76,6 +84,7 @@ public class GameManager : MonoBehaviour
     {
         public float timePoint = 0.0f;
         public bool isBoss = false;
+        public GameObject ObjectToEnable;
 
         public MatchPoint(float timePoint, bool isBossBattle)
         {
