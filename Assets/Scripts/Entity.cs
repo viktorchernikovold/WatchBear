@@ -13,6 +13,15 @@ public class Entity : MonoBehaviour
     public AudioClip hurtSound;
     public AudioClip healSound;
 
+    public bool DisableOnDeath;
+
+    Vector3 startingPos;
+
+    private void Awake()
+    {
+        startingPos = transform.position;
+    }
+
     protected virtual void OnEnable()
     {
         mixin.onHeal += this.OnHeal;
@@ -54,7 +63,13 @@ public class Entity : MonoBehaviour
             AudioSystem.PlaySound(deathSound, transform.position, 1f, 128);
         if (deathObject != null)
             Instantiate(deathObject, transform.position, transform.rotation);
-        Destroy(gameObject);
+        if (!DisableOnDeath)
+            Destroy(gameObject);
+        else
+        {
+            gameObject.SetActive(false);
+            transform.position = startingPos;
+        }
     }
 
     protected virtual void OnHeal()

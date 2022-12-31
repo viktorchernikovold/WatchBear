@@ -118,13 +118,14 @@ GameObject:
   - component: {fileID: 4016445227119201009}
   - component: {fileID: 4016445227119201014}
   - component: {fileID: 4016445227119201013}
+  - component: {fileID: 8736943010179504930}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4016445227119201012
 Transform:
   m_ObjectHideFlags: 0
@@ -160,6 +161,7 @@ MonoBehaviour:
   deathSound: {fileID: 8300000, guid: 402ae7c54f8d07440b7691b5b591b984, type: 3}
   hurtSound: {fileID: 0}
   healSound: {fileID: 0}
+  DisableOnDeath: 1
   moveSpeed: 1
   playerMeetRange: 4
   playerFollowRange: 6
@@ -235,3 +237,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8736943010179504930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4016445227119201008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 287ae5a7290d2f44f814b0ee99bf014a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
