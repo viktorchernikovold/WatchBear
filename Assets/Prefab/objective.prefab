@@ -235,6 +235,7 @@ GameObject:
   - component: {fileID: 3101360573203626814}
   - component: {fileID: 3101360573203626809}
   - component: {fileID: 3101360573203626813}
+  - component: {fileID: 1604085344018297366}
   m_Layer: 0
   m_Name: objective
   m_TagString: Untagged
@@ -328,6 +329,9 @@ MonoBehaviour:
   mixin: {fileID: 3101360573203626809}
   deathObject: {fileID: 0}
   hurtObject: {fileID: 0}
+  deathSound: {fileID: 0}
+  hurtSound: {fileID: 0}
+  healSound: {fileID: 0}
 --- !u!114 &3101360573203626809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,6 +374,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.442853, y: 1.44}
   m_EdgeRadius: 0
+--- !u!114 &1604085344018297366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3101360573203626808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c20fbdea24bff4eb8ac4d173e57eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnee: {fileID: 3405794410095615144, guid: 3cd029e8838c8d2428130989bc86b711, type: 3}
+  spawnEffect: {fileID: 2152966808990567957, guid: ae563af7d8da911429a69f7e2f91ad4c, type: 3}
+  radius: 1.5
+  TimerMax: 6
+  TimerMin: 4
+  PlayerHPLowerThan: 8
 --- !u!1 &6605052233886831920
 GameObject:
   m_ObjectHideFlags: 0
