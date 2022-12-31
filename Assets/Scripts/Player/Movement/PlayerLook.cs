@@ -5,10 +5,16 @@ using UnityEngine;
 public class PlayerLook : PlayerComponent
 {
     public Camera aimCamera;
+    public Camera mainCamera;
+    public CinemachineVirtualCamera cinemachine;
     public Transform aimPoint;
     public Transform weaponOrigin;
     public Transform playerGraphics;
     public Transform weaponGraphics;
+
+    public float titleOrto = 7.5f;
+    public float gameOrto = 3.25f;
+    public float zoomSpeed = 5;
 
     public float aimPointMax = 5f;
     public float aimPointMin = 1f;
@@ -33,23 +39,38 @@ public class PlayerLook : PlayerComponent
 
     private void Update()
     {
+        float currentZoom = gameOrto;
+        if (!GameManager.main.isPlaying)
+        {
+            currentZoom = titleOrto;
+            aimPoint.transform.position = Vector2.zero;
+        }   
+        cinemachine.m_Lens.OrthographicSize = Mathf.Lerp(mainCamera.orthographicSize, currentZoom, Time.deltaTime * zoomSpeed);
         Quaternion rotation = GetLookRotationQ();
         float pointDistance = Vector2.Distance(GetMousePositionWp(), transform.position);
         if (pointDistance > aimPointMax) pointDistance = aimPointMax;
-        if (pointDistance <= aimPointMin)
+        if (GameManager.main.isPlaying)
         {
-            aimPoint.localPosition = Vector3.zero;
-        }
-        else
-        {
-            aimPoint.localPosition = rotation * Vector3.up * pointDistance;
-        }
-        weaponOrigin.rotation = rotation;
+            if (pointDistance <= aimPointMin)
+            {
+                aimPoint.localPosition = Vector3.zero;
+            }
+            else
+            {
+                aimPoint.localPosition = rotation * Vector3.up * pointDistance;
+            }
+            weaponOrigin.rotation = rotation;
 
-        if (GetMousePositionWp().x > transform.position.x)
-        {
-            playerGraphics.localRotation = Quaternion.Euler(0f, 180f, 0f);
-            weaponGraphics.localRotation = Quaternion.Euler(0f, 180f, -90f);
+            if (GetMousePositionWp().x > transform.position.x)
+            {
+                playerGraphics.localRotation = Quaternion.Euler(0f, 180f, 0f);
+                weaponGraphics.localRotation = Quaternion.Euler(0f, 180f, -90f);
+            }
+            else
+            {
+                playerGraphics.localRotation = Quaternion.Euler(Vector3.zero);
+                weaponGraphics.localRotation = Quaternion.Euler(0f, 0f, -90f);
+            }
         }
         else
         {

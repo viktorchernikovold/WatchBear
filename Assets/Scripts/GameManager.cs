@@ -72,11 +72,11 @@ public class GameManager : MonoBehaviour
         onEnd?.Invoke();
         if (success)
         {
-            throw new NotImplementedException();
+
         }
         else
         {
-            throw new NotImplementedException();
+
         }
     }
     public void Update()
