@@ -24,7 +24,7 @@ public class Gun : MonoBehaviour
     {
         if (delay > 0f) delay -= Time.deltaTime;
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && GameManager.main.isPlaying)
         {
             Shoot();
         }
