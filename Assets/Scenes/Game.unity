@@ -8355,8 +8355,8 @@ MonoBehaviour:
   layoutGroup: {fileID: 1884731393}
   targetWeapon: {fileID: 490767370}
   ammos: []
-  goodammo: {fileID: 21300000, guid: f608b10bd8eb36e41877b4544f63b7c2, type: 3}
-  badammo: {fileID: 21300000, guid: 65f0e363b74cf5845ab8c3fbc14f39ac, type: 3}
+  goodammo: {fileID: -635956316, guid: f608b10bd8eb36e41877b4544f63b7c2, type: 3}
+  badammo: {fileID: 1922077762, guid: f608b10bd8eb36e41877b4544f63b7c2, type: 3}
 --- !u!1 &1901078814
 GameObject:
   m_ObjectHideFlags: 0
