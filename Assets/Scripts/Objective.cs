@@ -8,7 +8,7 @@ public class Objective : Entity
     protected override void OnDie()
     {
         base.OnDie();
-        GameManager.main.End(false);
+        GameManager.main.DoLampEvent();
     }
     protected override void OnHeal()
     {

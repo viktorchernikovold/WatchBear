@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,6 +12,10 @@ public class GameManager : MonoBehaviour
 
     public Objective objective;
     public uGUI_Result gameResult;
+
+    public float lampBreakLerp = 2f;
+    public float lampBreakWait = 5f;
+
 
     public float currentTime;
     public float endTime;
@@ -57,10 +62,25 @@ public class GameManager : MonoBehaviour
             }
         }
         Player.main.transform.position = playerSpawn.position;
+        Player.main.look.canLook = true;
         objective.transform.position = objectiveSpawn.position;
         onBegin?.Invoke();
     }
-
+    public void DoLampEvent()
+    {
+        StartCoroutine(GameManager.main.LampBreakEvent());
+    }
+    public IEnumerator LampBreakEvent()
+    {
+        Player.main.look.canLook = false;
+        Transform aimpoint = Player.main.look.aimPoint.transform;
+        aimpoint.SetParent(null);
+        aimpoint.transform.position = objectiveSpawn.transform.position;
+        yield return new WaitForSeconds(lampBreakWait);
+        Debug.Log("AAH");
+        aimpoint.SetParent(Player.main.transform);
+        End(false);
+    }
     public void End(bool success)
     {
         if (!isPlaying)
@@ -71,6 +91,7 @@ public class GameManager : MonoBehaviour
         Player.main.transform.position = new Vector3(0, 10000, 0);
         Player.main.mixin.Heal(1000);
         Player.main.look.aimPoint.transform.position = Vector3.zero;
+        Player.main.look.canLook = false;
         matchPoints[currentMatchPoint].Disactivate();
         isPlaying = false;
         currentTime = 0f;

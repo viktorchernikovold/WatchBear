@@ -19,10 +19,13 @@ public class PlayerLook : PlayerComponent
     public float aimPointMax = 5f;
     public float aimPointMin = 1f;
 
+    public bool canLook = false;
+
     private void Awake()
     {
         aimPoint.transform.position = Vector3.zero;
         cinemachine.m_Lens.OrthographicSize = titleOrto;
+        canLook = false;
     }
 
     public float GetLookRotation()
@@ -48,13 +51,14 @@ public class PlayerLook : PlayerComponent
         {
             currentZoom = titleOrto;
             aimPoint.transform.position = Vector2.zero;
-        }   
+        }
         cinemachine.m_Lens.OrthographicSize = Mathf.Lerp(mainCamera.orthographicSize, currentZoom, Time.deltaTime * zoomSpeed);
-        Quaternion rotation = GetLookRotationQ();
-        float pointDistance = Vector2.Distance(GetMousePositionWp(), transform.position);
-        if (pointDistance > aimPointMax) pointDistance = aimPointMax;
-        if (GameManager.main.isPlaying)
+        Debug.Log("DoZoom");
+        if (GameManager.main.isPlaying && canLook)
         {
+            Quaternion rotation = GetLookRotationQ();
+            float pointDistance = Vector2.Distance(GetMousePositionWp(), transform.position);
+            if (pointDistance > aimPointMax) pointDistance = aimPointMax;
             if (pointDistance <= aimPointMin)
             {
                 aimPoint.localPosition = Vector3.zero;

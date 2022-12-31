@@ -8,6 +8,10 @@ public class Entity : MonoBehaviour
     public GameObject deathObject;
     public GameObject hurtObject;
 
+    public AudioClip deathSound;
+    public AudioClip hurtSound;
+    public AudioClip healSound;
+
     private void OnEnable()
     {
         mixin.onHeal += this.OnHeal;
