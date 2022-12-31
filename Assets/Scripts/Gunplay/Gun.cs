@@ -4,7 +4,9 @@ public class Gun : MonoBehaviour
 {
     public GunStats gun;
 
-    [HideInInspector]
+    public delegate void OnAmmoChange();
+    public event OnAmmoChange onAmmoChange;
+
     public int currentAmmo;
 
     [SerializeField]
@@ -31,11 +33,13 @@ public class Gun : MonoBehaviour
     {
         currentAmmo += amount;
         if (currentAmmo > gun.AmmoLimit) currentAmmo = gun.AmmoLimit;
+        onAmmoChange?.Invoke();
     }
     public void Shoot()
     {
         if (currentAmmo <= 0 || delay > 0f)
             return;
+        onAmmoChange?.Invoke();
 
         currentAmmo -= 1;
         delay = 1f / gun.RPS;
