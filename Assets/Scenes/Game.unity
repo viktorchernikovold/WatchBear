@@ -7586,7 +7586,7 @@ MonoBehaviour:
   hurtObject: {fileID: 2152966808990567957, guid: d5a9ccd81ff6c78448b9eba672e49192, type: 3}
   deathSound: {fileID: 0}
   hurtSound: {fileID: 0}
-  healSound: {fileID: 0}
+  healSound: {fileID: 8300000, guid: 2f6c9609cc933a140823eb5733ffcd09, type: 3}
   currentWeapon: {fileID: 490767370}
   look: {fileID: 1566696065}
   movement: {fileID: 1566696064}
