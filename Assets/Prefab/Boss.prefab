@@ -156,7 +156,10 @@ MonoBehaviour:
   animator: {fileID: 4016445225984617794}
   mixin: {fileID: 4016445227119201009}
   deathObject: {fileID: 2152966808990567957, guid: 9bae7161b04852b41ae7d186464596dc, type: 3}
-  hurtObject: {fileID: 2152966808990567957, guid: 2873c6890003f434f8eb923977cc85e4, type: 3}
+  hurtObject: {fileID: 2152966808990567957, guid: c8d5b2e033ce0074b87a9dce9135b96d, type: 3}
+  deathSound: {fileID: 0}
+  hurtSound: {fileID: 0}
+  healSound: {fileID: 0}
   moveSpeed: 1
   playerMeetRange: 4
   playerFollowRange: 6
