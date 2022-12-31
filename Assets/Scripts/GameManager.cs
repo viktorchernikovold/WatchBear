@@ -18,6 +18,11 @@ public class GameManager : MonoBehaviour
         main = this;
         currentTime = 0.0f;
         isPlaying = false;
+
+        foreach (MatchPoint mp in matchPoints)
+            mp.ObjectToEnable.SetActive(false);
+
+        Begin();
     }
 
     public void Begin()
@@ -28,7 +33,7 @@ public class GameManager : MonoBehaviour
         }
         isPlaying = true;
         currentTime = 0.0f;
-        currentMatchPoint = 0;
+        SetMatchPoint(0);
     }
 
     public void End(bool success)
