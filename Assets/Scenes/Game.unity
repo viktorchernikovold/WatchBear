@@ -6836,6 +6836,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpawn: {fileID: 661909012}
   objectiveSpawn: {fileID: 314491116}
+  beginSound: {fileID: 8300000, guid: c344f37ed72f1fc439a2ed628e2b1637, type: 3}
+  winSound: {fileID: 8300000, guid: 8ba18a85251215e4886788a3a5d922e1, type: 3}
+  loseSound: {fileID: 8300000, guid: 454ef2371fa6fb24c8f01fc16a5757c4, type: 3}
   objective: {fileID: 0}
   gameResult: {fileID: 1199954357}
   lampBreakLerp: 2

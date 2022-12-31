@@ -1,3 +1,4 @@
+using Game.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,6 +12,10 @@ public class GameManager : MonoBehaviour
     public Transform playerSpawn;
     public Transform objectiveSpawn;
 
+    public AudioClip beginSound;
+    public AudioClip winSound;
+    public AudioClip loseSound;
+
     public Objective objective;
     public uGUI_Result gameResult;
 
@@ -21,6 +26,7 @@ public class GameManager : MonoBehaviour
     public float currentTime;
     public float endTime;
     public bool isPlaying;
+    public bool hasLampBroke;
 
     public MatchPoint[] matchPoints;
     public int currentMatchPoint;
@@ -39,6 +45,7 @@ public class GameManager : MonoBehaviour
         main = this;
         currentTime = 0.0f;
         isPlaying = false;
+        hasLampBroke = false;
 
         foreach (MatchPoint mp in matchPoints)
         {
@@ -54,9 +61,11 @@ public class GameManager : MonoBehaviour
             return;
         }
         onBegin?.Invoke();
+        AudioSystem.PlaySound(beginSound, transform.position, 1f, 128);
         isPlaying = true;
         currentTime = 0.0f;
         SetMatchPoint(0);
+        hasLampBroke = false;
         if (objective == null)
         {
             objective = GameObject.FindObjectOfType<Objective>();
@@ -78,25 +87,31 @@ public class GameManager : MonoBehaviour
     }
     public IEnumerator LampBreakEvent()
     {
+        hasLampBroke = true;
         Player.main.look.canLook = false;
         Player.main.movement.canMove = false; ;
         Transform aimpoint = Player.main.look.aimPoint.transform;
         aimpoint.SetParent(null);
         aimpoint.transform.position = objectiveSpawn.transform.position;
-        yield return new WaitForSeconds(lampBreakWait);
+        AudioSystem.PlaySound(loseSound, transform.position, 1f, 128);
+        yield return new WaitForSeconds(loseSound.length + lampBreakWait);
         Debug.Log("AAH");
         aimpoint.SetParent(Player.main.transform);
-        End(false);
+        End(false, playSound: false);
     }
-    public void End(bool success)
+    public void End(bool success, bool playSound = true)
     {
         if (!isPlaying)
         {
             return;
         }
-        onEnd?.Invoke();
+        StartCoroutine(c_end(success, playSound));
+    }
+    private IEnumerator c_end(bool success, bool playSound)
+    {
         onGameEnd?.Invoke();
-        Player.main.transform.position = new Vector3(0, 10000, 0);
+        hasLampBroke = false;
+        MusicManager.main.StopMusic();
         Player.main.mixin.Heal(1000);
         Gun g = Player.main.GetComponentInChildren<Gun>();
         g.currentAmmo = g.gun.AmmoLimit;
@@ -107,15 +122,27 @@ public class GameManager : MonoBehaviour
         isPlaying = false;
         currentTime = 0f;
         currentMatchPoint = 0;
-        onEnd?.Invoke();
+        AudioClip cl;
         if (success)
         {
             gameResult.SetWin();
+            cl = winSound;
         }
         else
         {
             gameResult.SetLose();
+            cl = loseSound;
         }
+        if (playSound)
+        {
+            AudioSystem.PlaySound(cl, transform.position, 1f, 128);
+            yield return new WaitForSeconds(cl.length * 1.5f);
+        }
+        if (!isPlaying)
+        {
+            onEnd?.Invoke();
+        }
+        yield return null;
     }
     public void Update()
     {
