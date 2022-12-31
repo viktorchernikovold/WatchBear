@@ -11,7 +11,7 @@ public class MusicManager : MonoBehaviour
 
     private void Awake()
     {
-        //PlayClip(Title);
+        PlayClip(Title);
     }
     
     public void PlayClip(AudioClip clip)
