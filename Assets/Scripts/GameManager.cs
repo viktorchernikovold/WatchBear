@@ -34,6 +34,15 @@ public class GameManager : MonoBehaviour
         isPlaying = true;
         currentTime = 0.0f;
         SetMatchPoint(0);
+        if (objective == null)
+        {
+            objective = GameObject.FindObjectOfType<Objective>();
+            if (objective == null)
+            {
+                //TODO SPAWN OBJECTIVE IN CASE THERE ARE NO OBJECTIVE
+                throw new NotImplementedException();
+            }
+        }
     }
 
     public void End(bool success)
