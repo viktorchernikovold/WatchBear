@@ -19,7 +19,11 @@ public class PlayerLook : PlayerComponent
     public float aimPointMax = 5f;
     public float aimPointMin = 1f;
 
-
+    private void Awake()
+    {
+        aimPoint.transform.position = Vector3.zero;
+        cinemachine.m_Lens.OrthographicSize = titleOrto;
+    }
 
     public float GetLookRotation()
     {
