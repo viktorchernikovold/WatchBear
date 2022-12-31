@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnee: {fileID: 3405794410095615144, guid: 3cd029e8838c8d2428130989bc86b711, type: 3}
-  radius: 2.5
+  radius: 2
   TimerMax: 6
   TimerMin: 4
 --- !u!1 &359257154

@@ -50,20 +50,17 @@ public class Bullet : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Vector2 direction = Vector2.Reflect(transform.up, collision.contacts[0].normal);
+        float angle = Mathf.Atan2(-direction.x, direction.y) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        ricochetSpeedDrop *= bullet.ricochetSpeedDrop;
+
         if (collision.gameObject.TryGetComponent(out LivingMixin living))
         {
             if (!living.isFriendly)
             {
                 living.Hurt(bullet.Damage);
             }
-            Drop();
-        }
-        else
-        {
-            Vector2 direction = Vector2.Reflect(transform.up, collision.contacts[0].normal);
-            float angle = Mathf.Atan2(-direction.x, direction.y) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            ricochetSpeedDrop *= bullet.ricochetSpeedDrop;
         }
     }
 }
