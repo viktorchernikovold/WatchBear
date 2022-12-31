@@ -18,6 +18,9 @@ public class Enemy : Entity
     public Entity target;
     public Rigidbody2D useRigidbody;
 
+    [SerializeField]
+    Transform sprite;
+
     protected virtual void Update()
     {
         bool flag1 = GameManager.main.objective != null || GameManager.main.objective.mixin.isAlive; // is Objective Alive
@@ -45,6 +48,14 @@ public class Enemy : Entity
         else
         {
             target = Player.main;
+        }
+
+        if (target != null)
+        {
+            if (target.transform.position.x < transform.position.x)
+                sprite.localRotation = Quaternion.Euler(0f, 180f, 0f);
+            else
+                sprite.localRotation = Quaternion.Euler(Vector3.zero);
         }
 
         useRigidbody.velocity = Vector2.zero;

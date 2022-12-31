@@ -170,6 +170,7 @@ MonoBehaviour:
   DontAttackObjective: 1
   target: {fileID: 0}
   useRigidbody: {fileID: 4016445227119201013}
+  sprite: {fileID: 4016445225984617796}
 --- !u!114 &4016445227119201009
 MonoBehaviour:
   m_ObjectHideFlags: 0
