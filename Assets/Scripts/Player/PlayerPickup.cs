@@ -33,6 +33,7 @@ public class PlayerPickup : PlayerComponent
             for (int i = 0; i < pickables.Count; i++)
             {
                 int toPick = 0;
+
                 switch (pickables[i].type)
                 {
                     case ItemType.Ammo:
@@ -48,6 +49,8 @@ public class PlayerPickup : PlayerComponent
                         {
                             break;
                         }
+                        toPick = 1;
+                        player.mixin.Heal(pickables[i].amount);
                         break;
                     case ItemType.Reserved1:
                         throw new NotImplementedException();
@@ -56,6 +59,7 @@ public class PlayerPickup : PlayerComponent
                     default:
                         throw new NotImplementedException();
                 }
+
                 pickables[i].Pick(toPick);
             }
 

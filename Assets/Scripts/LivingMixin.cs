@@ -39,7 +39,7 @@ public class LivingMixin : MonoBehaviour
     }
     public int Heal(int amount)
     {
-        health += amount;
+        health = Mathf.Clamp(health + amount, 0, m_maxHealth);
         onHeal?.Invoke();
         onHealthChange?.Invoke();
         isAlive = health > 0 ? true : false;
