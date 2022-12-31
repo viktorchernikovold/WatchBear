@@ -159,10 +159,9 @@ MonoBehaviour:
   playerMeetRange: 4
   playerFollowRange: 6
   attackRange: 1.5
-  attackDamage: 2
-  attackDelay: 0.75
+  attackDamage: 1
+  attackDelay: 2
   attackCooldown: 0
-  isMoving: 0
   target: {fileID: 0}
   useRigidbody: {fileID: 4016445227119201013}
 --- !u!114 &4016445227119201009

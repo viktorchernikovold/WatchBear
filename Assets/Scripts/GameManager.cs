@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class GameManager : MonoBehaviour
     public MatchPoint[] matchPoints;
     public int currentMatchPoint;
 
+    public UnityEvent onBegin;
+    public UnityEvent onEnd;
+
+
     private void Awake()
     {
         main = this;
@@ -20,8 +25,14 @@ public class GameManager : MonoBehaviour
         isPlaying = false;
 
         foreach (MatchPoint mp in matchPoints)
-            mp.ObjectToEnable.SetActive(false);
+        {
+            mp.Disactivate();
+        }
 
+    }
+    private void OnEnable()
+    {
+        Debug.Log("OnBegin");
         Begin();
     }
 
@@ -31,6 +42,7 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
+        onBegin?.Invoke();
         isPlaying = true;
         currentTime = 0.0f;
         SetMatchPoint(0);
@@ -43,6 +55,7 @@ public class GameManager : MonoBehaviour
                 throw new NotImplementedException();
             }
         }
+        onBegin?.Invoke();
     }
 
     public void End(bool success)
@@ -51,10 +64,12 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
+        onEnd?.Invoke();
+        matchPoints[currentMatchPoint].Disactivate();
         isPlaying = false;
         currentTime = 0f;
         currentMatchPoint = 0;
-
+        onEnd?.Invoke();
         if (success)
         {
             throw new NotImplementedException();
@@ -74,23 +89,21 @@ public class GameManager : MonoBehaviour
                 End(true);
                 return;
             }
-            if (currentMatchPoint < matchPoints.Length)
+            if (currentMatchPoint + 1 < matchPoints.Length)
             {
                 if (!(currentTime >= matchPoints[currentMatchPoint].timePoint && currentTime < matchPoints[currentMatchPoint + 1].timePoint))
                 {
-                    SetMatchPoint(++currentMatchPoint);
+                    SetMatchPoint(currentMatchPoint + 1);
                 }
             }
         }
     }
     private void SetMatchPoint(int point)
     {
+        int oldPoint = currentMatchPoint;
         currentMatchPoint = point;
-
-        foreach (MatchPoint mp in matchPoints)
-            mp.ObjectToEnable.SetActive(false);
-
-        matchPoints[point].ObjectToEnable.SetActive(true);
+        matchPoints[oldPoint].Disactivate();
+        matchPoints[currentMatchPoint].Activate();
     }
 
     [Serializable]
@@ -98,12 +111,26 @@ public class GameManager : MonoBehaviour
     {
         public float timePoint = 0.0f;
         public bool isBoss = false;
-        public GameObject ObjectToEnable;
+        public GameObject[] objects;
 
         public MatchPoint(float timePoint, bool isBossBattle)
         {
             this.timePoint = timePoint;
             this.isBoss = isBossBattle;
+        }
+        public void Activate()
+        {
+            foreach (GameObject objj in objects)
+            {
+                objj.SetActive(true);
+            }
+        }
+        public void Disactivate()
+        {
+            foreach (GameObject oldObj in objects)
+            {
+                oldObj.SetActive(false);
+            }
         }
     }
 }
