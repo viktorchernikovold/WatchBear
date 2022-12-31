@@ -7134,7 +7134,7 @@ GameObject:
   - component: {fileID: 1808649844}
   - component: {fileID: 1808649843}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: NightLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
