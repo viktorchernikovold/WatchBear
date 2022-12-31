@@ -6,6 +6,7 @@ public class Entity : MonoBehaviour
     public LivingMixin mixin;
 
     public GameObject deathObject;
+    public GameObject hurtObject;
 
     private void OnEnable()
     {
@@ -48,18 +49,15 @@ public class Entity : MonoBehaviour
             Instantiate(deathObject, transform.position, transform.rotation);
         Destroy(gameObject);
     }
+
     protected virtual void OnHeal()
     {
-        if (animator != null)
-        {
-            animator.SetTrigger("onHeal");
-        }
+        
     }
+
     protected virtual void OnHurt()
     {
-        if (animator != null)
-        {
-            animator.SetTrigger("onHurt");
-        }
+        if (hurtObject != null)
+            Instantiate(hurtObject, transform.position, transform.rotation);
     }
 }
