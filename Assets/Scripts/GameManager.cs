@@ -50,10 +50,10 @@ public class GameManager : MonoBehaviour
         SetMatchPoint(0);
         if (objective == null)
         {
-            objective = FindObjectOfType<Objective>();
+            objective = GameObject.FindObjectOfType<Objective>();
             if (objective == null)
             {
-                objective = Instantiate(objective_prefab).GetComponent<Objective>();
+                objective = GameObject.Instantiate(objective_prefab).GetComponent<Objective>();
             }
         }
         Player.main.transform.position = playerSpawn.position;
