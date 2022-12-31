@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NerfBullet
   m_EditorClassIdentifier: 
   Damage: 1
-  Speed: 12
+  Speed: 13
   DropTimeMin: 0.5
   DropTimeMax: 1
   ricochetSpeedDrop: 0.5

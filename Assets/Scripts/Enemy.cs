@@ -13,6 +13,8 @@ public class Enemy : Entity
     public float attackDelay;
     public float attackCooldown;
 
+    public bool DontAttackObjective;
+
     public Entity target;
     public Rigidbody2D useRigidbody;
 
@@ -29,13 +31,20 @@ public class Enemy : Entity
                 target = GameManager.main.objective;
             }
         }
-        if (num1 <= playerMeetRange && num2 > num1)
+        if (!DontAttackObjective)
+        {
+            if (num1 <= playerMeetRange && num2 > num1)
+            {
+                target = Player.main;
+            }
+            if ((num1 > playerFollowRange || num2 <= num1) && flag1)
+            {
+                target = GameManager.main.objective;
+            }
+        }
+        else
         {
             target = Player.main;
-        }
-        if ((num1 > playerFollowRange || num2 <= num1) && flag1)
-        {
-            target = GameManager.main.objective;
         }
 
         useRigidbody.velocity = Vector2.zero;
