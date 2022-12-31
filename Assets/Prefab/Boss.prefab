@@ -170,6 +170,7 @@ MonoBehaviour:
   DontAttackObjective: 1
   target: {fileID: 0}
   useRigidbody: {fileID: 4016445227119201013}
+  attackClip: {fileID: 8300000, guid: 875263d796566b54098b47eddb529997, type: 3}
   sprite: {fileID: 4016445225984617796}
 --- !u!114 &4016445227119201009
 MonoBehaviour:

@@ -1,3 +1,4 @@
+using Game.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -17,6 +18,8 @@ public class Enemy : Entity
 
     public Entity target;
     public Rigidbody2D useRigidbody;
+
+    public AudioClip attackClip;
 
     [SerializeField]
     Transform sprite;
@@ -103,6 +106,8 @@ public class Enemy : Entity
     {
         attackCooldown = attackDelay;
         target.mixin.Hurt(attackDamage);
+        if (attackClip != null)
+            AudioSystem.PlaySound(attackClip, transform.position, 1f, 128);
     }
 
     protected virtual bool InAttackRange()

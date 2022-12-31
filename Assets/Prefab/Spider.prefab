@@ -158,7 +158,7 @@ MonoBehaviour:
   deathObject: {fileID: 2152966808990567957, guid: 2873c6890003f434f8eb923977cc85e4, type: 3}
   hurtObject: {fileID: 2152966808990567957, guid: c8d5b2e033ce0074b87a9dce9135b96d, type: 3}
   deathSound: {fileID: 8300000, guid: ba3ba90917d570e418feccd90bc3cba8, type: 3}
-  hurtSound: {fileID: 0}
+  hurtSound: {fileID: 8300000, guid: 875263d796566b54098b47eddb529997, type: 3}
   healSound: {fileID: 0}
   moveSpeed: 1.5
   playerMeetRange: 4
@@ -170,6 +170,7 @@ MonoBehaviour:
   DontAttackObjective: 0
   target: {fileID: 0}
   useRigidbody: {fileID: 4016445227119201013}
+  attackClip: {fileID: 8300000, guid: 875263d796566b54098b47eddb529997, type: 3}
   sprite: {fileID: 4016445225984617796}
 --- !u!114 &4016445227119201009
 MonoBehaviour:

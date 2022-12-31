@@ -330,7 +330,7 @@ MonoBehaviour:
   deathObject: {fileID: 0}
   hurtObject: {fileID: 0}
   deathSound: {fileID: 0}
-  hurtSound: {fileID: 0}
+  hurtSound: {fileID: 8300000, guid: 635c296ae4d30e94a99cb2b5af90624e, type: 3}
   healSound: {fileID: 0}
 --- !u!114 &3101360573203626809
 MonoBehaviour:
