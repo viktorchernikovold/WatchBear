@@ -40,11 +40,12 @@ public class Gun : MonoBehaviour
     {
         if (currentAmmo <= 0 || delay > 0f)
             return;
+
+        currentAmmo -= 1;
         onAmmoChange?.Invoke();
 
         AudioSystem.PlaySound(gun.ShootSound, transform.position, 1f, 128);
-
-        currentAmmo -= 1;
+        
         delay = 1f / gun.RPS;
         Instantiate(gun.BulletToSpawn, transform.position, transform.rotation);
 
