@@ -6,12 +6,14 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D useRigidbody;
     public float timeInAir = 0.0f;
     public float dropTime;
+    public float ricochetSpeedDrop;
 
     bool dropped = false;
 
     private void Start()
     {
         dropTime = Random.Range(bullet.DropTimeMin, bullet.DropTimeMax);
+        ricochetSpeedDrop = 1.0f;
     }
 
     private void Update()
@@ -34,7 +36,7 @@ public class Bullet : MonoBehaviour
         float timeFracture = timeInAir / dropTime;
         float speedMultiply = bullet.DropSpeedCurve.Evaluate(timeFracture);
         timeInAir += Time.deltaTime;
-        useRigidbody.velocity = transform.up * bullet.Speed * speedMultiply;
+        useRigidbody.velocity = transform.up * bullet.Speed * speedMultiply * ricochetSpeedDrop;
     }
 
     public void Drop()
@@ -48,14 +50,20 @@ public class Bullet : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Drop();
-
-        if (collision.gameObject.TryGetComponent(out LivingMixin living) && bullet.isFriendly != living.isFriendly)
+        if (collision.gameObject.TryGetComponent(out LivingMixin living))
         {
             if (!living.isFriendly)
             {
                 living.Hurt(bullet.Damage);
             }
+            Drop();
+        }
+        else
+        {
+            Vector2 direction = Vector2.Reflect(transform.up, collision.contacts[0].normal);
+            float angle = Mathf.Atan2(-direction.x, direction.y) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            ricochetSpeedDrop *= bullet.ricochetSpeedDrop;
         }
     }
 }

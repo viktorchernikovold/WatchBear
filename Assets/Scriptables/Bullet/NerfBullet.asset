@@ -16,6 +16,7 @@ MonoBehaviour:
   Speed: 12
   DropTimeMin: 0.5
   DropTimeMax: 1
+  ricochetSpeedDrop: 0.5
   DropSpeedCurve:
     serializedVersion: 2
     m_Curve:
