@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -24,9 +25,12 @@ public class GameManager : MonoBehaviour
     public MatchPoint[] matchPoints;
     public int currentMatchPoint;
 
+    public delegate void OnGameEnd();
+    public event OnGameEnd onGameEnd;
+
     public UnityEvent onBegin;
     public UnityEvent onEnd;
-
+    public UnityEvent onLampBreak;
 
     [SerializeField] GameObject objective_prefab;
 
@@ -63,16 +67,19 @@ public class GameManager : MonoBehaviour
         }
         Player.main.transform.position = playerSpawn.position;
         Player.main.look.canLook = true;
+        Player.main.movement.canMove = true;
         objective.transform.position = objectiveSpawn.position;
         onBegin?.Invoke();
     }
     public void DoLampEvent()
     {
+        onLampBreak?.Invoke();
         StartCoroutine(GameManager.main.LampBreakEvent());
     }
     public IEnumerator LampBreakEvent()
     {
         Player.main.look.canLook = false;
+        Player.main.movement.canMove = false; ;
         Transform aimpoint = Player.main.look.aimPoint.transform;
         aimpoint.SetParent(null);
         aimpoint.transform.position = objectiveSpawn.transform.position;
@@ -88,10 +95,14 @@ public class GameManager : MonoBehaviour
             return;
         }
         onEnd?.Invoke();
+        onGameEnd?.Invoke();
         Player.main.transform.position = new Vector3(0, 10000, 0);
         Player.main.mixin.Heal(1000);
+        Gun g = Player.main.GetComponentInChildren<Gun>();
+        g.currentAmmo = g.gun.AmmoLimit;
         Player.main.look.aimPoint.transform.position = Vector3.zero;
         Player.main.look.canLook = false;
+        Player.main.movement.canMove = false;
         matchPoints[currentMatchPoint].Disactivate();
         isPlaying = false;
         currentTime = 0f;

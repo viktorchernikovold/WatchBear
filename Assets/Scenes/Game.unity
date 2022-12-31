@@ -6565,6 +6565,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onLampBreak:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1156282528}
+        m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
+        m_MethodName: StopMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   objective_prefab: {fileID: 3101360573203626808, guid: c4e506f15579e8f47add1f9078de3c4d, type: 3}
 --- !u!4 &1156282526
 Transform:

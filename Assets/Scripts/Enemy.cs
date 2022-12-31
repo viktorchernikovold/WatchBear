@@ -69,6 +69,18 @@ public class Enemy : Entity
     {
         base.OnDie();
     }
+    private void OnEnable()
+    {
+        GameManager.main.onGameEnd += DestroySelf;
+    }
+    private void OnDisable()
+    {
+        GameManager.main.onGameEnd -= DestroySelf;
+    }
+    private void DestroySelf()
+    {
+        Destroy(this.gameObject);
+    }
 
     protected virtual void Move()
     {

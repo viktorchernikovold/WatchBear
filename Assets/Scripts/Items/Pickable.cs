@@ -21,6 +21,18 @@ public class Pickable : MonoBehaviour
     {
         useCollider.enabled = false;
     }
+    private void OnEnable()
+    {
+        GameManager.main.onGameEnd += DestroySelf;
+    }
+    private void OnDisable()
+    {
+        GameManager.main.onGameEnd -= DestroySelf;
+    }
+    private void DestroySelf()
+    {
+        Destroy(this.gameObject);
+    }
     private void Update()
     { 
         if (pickCooldown > 0)

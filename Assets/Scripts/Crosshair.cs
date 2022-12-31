@@ -17,7 +17,7 @@ public class Crosshair : MonoBehaviour
     }
     public void FixedUpdate()
     {
-        if (GameManager.main.isPlaying)
+        if (GameManager.main.isPlaying && Player.main.look.canLook)
         {
             renderer.enabled = true;
             light.enabled = true;

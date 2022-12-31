@@ -53,7 +53,6 @@ public class PlayerLook : PlayerComponent
             aimPoint.transform.position = Vector2.zero;
         }
         cinemachine.m_Lens.OrthographicSize = Mathf.Lerp(mainCamera.orthographicSize, currentZoom, Time.deltaTime * zoomSpeed);
-        Debug.Log("DoZoom");
         if (GameManager.main.isPlaying && canLook)
         {
             Quaternion rotation = GetLookRotationQ();
