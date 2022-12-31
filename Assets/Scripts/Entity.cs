@@ -12,13 +12,13 @@ public class Entity : MonoBehaviour
     public AudioClip hurtSound;
     public AudioClip healSound;
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         mixin.onHeal += this.OnHeal;
         mixin.onHurt += this.OnHurt;
         mixin.onDeath += this.OnDie;
     }
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
         mixin.onHeal -= this.OnHeal;
         mixin.onHurt -= this.OnHurt;

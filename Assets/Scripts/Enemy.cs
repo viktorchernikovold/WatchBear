@@ -65,16 +65,14 @@ public class Enemy : Entity
             return;
         }
     }
-    protected override void OnDie()
+    protected override void OnEnable()
     {
-        base.OnDie();
-    }
-    private void OnEnable()
-    {
+        base.OnEnable();
         GameManager.main.onGameEnd += DestroySelf;
     }
-    private void OnDisable()
+    protected override void OnDisable()
     {
+        base.OnDisable();
         GameManager.main.onGameEnd -= DestroySelf;
     }
     private void DestroySelf()
