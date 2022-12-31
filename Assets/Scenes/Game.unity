@@ -5931,7 +5931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objective: {fileID: 0}
   currentTime: 0
-  endTime: 24
+  endTime: 360
   isPlaying: 0
   matchPoints:
   - timePoint: 0
@@ -5958,10 +5958,6 @@ MonoBehaviour:
     isBoss: 0
     objects:
     - {fileID: 707900533}
-  - timePoint: 360
-    isBoss: 1
-    objects:
-    - {fileID: 1324360205}
   currentMatchPoint: 0
   onBegin:
     m_PersistentCalls:
