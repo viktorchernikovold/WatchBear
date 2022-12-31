@@ -15,6 +15,8 @@ public class Player : Entity
     {
         if (main == null) main = this;
         else Destroy(gameObject);
+        transform.position = new Vector3(0, 10000, 0);
+        look.aimPoint.transform.position = new Vector3(0, 0, 0);
     }
     private void OnValidate()
     {
@@ -29,7 +31,13 @@ public class Player : Entity
 
     protected override void OnDie()
     {
-        GameManager.main.End(false);
+        if (!GameManager.main.hasLampBroke && GameManager.main.isPlaying)
+        {
+            GameManager.main.End(false);
+        }
+        Vector3 pos = transform.position;
+        transform.position = new Vector3(0, 10000, 0);
+        look.aimPoint.transform.position = pos;
     }
     public Vector2 GetPosition()
     {
