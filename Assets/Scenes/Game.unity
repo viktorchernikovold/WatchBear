@@ -6503,6 +6503,8 @@ MonoBehaviour:
   objectiveSpawn: {fileID: 314491116}
   objective: {fileID: 0}
   gameResult: {fileID: 1199954357}
+  lampBreakLerp: 2
+  lampBreakWait: 5
   currentTime: 0
   endTime: 360
   isPlaying: 0
@@ -7534,6 +7536,7 @@ MonoBehaviour:
   zoomSpeed: 5
   aimPointMax: 2
   aimPointMin: 1
+  canLook: 0
 --- !u!114 &1566696067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7565,7 +7568,10 @@ MonoBehaviour:
   animator: {fileID: 0}
   mixin: {fileID: 1566696067}
   deathObject: {fileID: 2152966808990567957, guid: 2873c6890003f434f8eb923977cc85e4, type: 3}
-  hurtObject: {fileID: 0}
+  hurtObject: {fileID: 2152966808990567957, guid: d5a9ccd81ff6c78448b9eba672e49192, type: 3}
+  deathSound: {fileID: 0}
+  hurtSound: {fileID: 0}
+  healSound: {fileID: 0}
   currentWeapon: {fileID: 490767370}
   look: {fileID: 1566696065}
   movement: {fileID: 1566696064}
