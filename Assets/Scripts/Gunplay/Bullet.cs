@@ -55,6 +55,14 @@ public class Bullet : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         ricochetSpeedDrop *= bullet.ricochetSpeedDrop;
 
+        if (bullet.HitObjects.Length > 0)
+        {
+            foreach (GameObject go in bullet.HitObjects)
+            {
+                Instantiate(go, transform.position, transform.rotation);
+            }
+        }
+
         if (collision.gameObject.TryGetComponent(out LivingMixin living))
         {
             if (!living.isFriendly)
