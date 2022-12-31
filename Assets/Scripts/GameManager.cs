@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager main;
 
+    public Transform playerSpawn;
+    public Transform objectiveSpawn;
+
     public Objective objective;
     public float currentTime;
     public float endTime;
