@@ -17,6 +17,7 @@ MonoBehaviour:
   DropTimeMin: 0.35
   DropTimeMax: 0.7
   ricochetSpeedDrop: 0.5
+  ricochetClip: {fileID: 8300000, guid: 883ac90b237b0ef40844dc4db8cf8dbe, type: 3}
   DropSpeedCurve:
     serializedVersion: 2
     m_Curve:

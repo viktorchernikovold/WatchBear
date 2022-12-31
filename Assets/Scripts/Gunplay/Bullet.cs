@@ -1,4 +1,6 @@
 using UnityEngine;
+using Game.Utils;
+
 
 public class Bullet : MonoBehaviour
 {
@@ -41,6 +43,7 @@ public class Bullet : MonoBehaviour
 
     public void Drop()
     {
+        AudioSystem.PlaySound(bullet.ricochetClip, transform.position, 1f, 128);
         timeInAir = 0.0f;
 
         if (bullet.DroppedVariant != null)
@@ -50,6 +53,7 @@ public class Bullet : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        AudioSystem.PlaySound(bullet.ricochetClip, transform.position, 1f, 128);
         Vector2 direction = Vector2.Reflect(transform.up, collision.contacts[0].normal);
         float angle = Mathf.Atan2(-direction.x, direction.y) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);

@@ -9,6 +9,8 @@ public class BulletStats : ScriptableObject
     public float DropTimeMin;
     public float DropTimeMax;
     public float ricochetSpeedDrop = 0.6f;
+
+    public AudioClip ricochetClip;
     public AnimationCurve DropSpeedCurve;
 
     public GameObject DroppedVariant;
