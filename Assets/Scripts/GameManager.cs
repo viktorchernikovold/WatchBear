@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public Transform objectiveSpawn;
 
     public Objective objective;
+    public uGUI_Result gameResult;
+
     public float currentTime;
     public float endTime;
     public bool isPlaying;
@@ -19,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     public UnityEvent onBegin;
     public UnityEvent onEnd;
+
 
     [SerializeField] GameObject objective_prefab;
 
@@ -75,11 +78,11 @@ public class GameManager : MonoBehaviour
         onEnd?.Invoke();
         if (success)
         {
-
+            gameResult.SetWin();
         }
         else
         {
-
+            gameResult.SetLose();
         }
     }
     public void Update()
