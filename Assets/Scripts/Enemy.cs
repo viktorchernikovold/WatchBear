@@ -38,9 +38,9 @@ public class Enemy : Entity
             target = GameManager.main.objective;
         }
 
+        useRigidbody.velocity = Vector2.zero;
         attackCooldown -= Time.deltaTime;
         if (attackCooldown < 0) attackCooldown = 0;
-
         if (InAttackRange())
         {
             if (!HasCooldown()) Attack();
