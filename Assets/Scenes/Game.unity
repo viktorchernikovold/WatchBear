@@ -6844,7 +6844,7 @@ MonoBehaviour:
   lampBreakLerp: 2
   lampBreakWait: 5
   currentTime: 0
-  endTime: 360
+  endTime: 400
   isPlaying: 0
   hasLampBroke: 0
   matchPoints:
