@@ -332,6 +332,7 @@ MonoBehaviour:
   deathSound: {fileID: 0}
   hurtSound: {fileID: 8300000, guid: 635c296ae4d30e94a99cb2b5af90624e, type: 3}
   healSound: {fileID: 0}
+  DisableOnDeath: 0
 --- !u!114 &3101360573203626809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,7 +348,7 @@ MonoBehaviour:
   isAlive: 0
   m_health: 16
   m_maxHealth: 16
-  isFriendly: 0
+  isFriendly: 1
 --- !u!61 &3101360573203626813
 BoxCollider2D:
   m_ObjectHideFlags: 0
