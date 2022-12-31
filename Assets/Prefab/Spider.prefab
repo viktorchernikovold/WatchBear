@@ -155,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 4016445225984617794}
   mixin: {fileID: 4016445227119201009}
+  deathObject: {fileID: 2152966808990567957, guid: 2873c6890003f434f8eb923977cc85e4, type: 3}
   moveSpeed: 2
   playerMeetRange: 4
   playerFollowRange: 6

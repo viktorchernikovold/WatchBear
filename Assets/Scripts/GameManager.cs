@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     public UnityEvent onBegin;
     public UnityEvent onEnd;
 
-
     private void Awake()
     {
         main = this;
