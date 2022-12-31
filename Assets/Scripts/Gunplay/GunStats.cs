@@ -8,4 +8,6 @@ public class GunStats : ScriptableObject
     public int AmmoLimit = 5;
 
     public GameObject BulletToSpawn;
+
+    public AudioClip ShootSound;
 }

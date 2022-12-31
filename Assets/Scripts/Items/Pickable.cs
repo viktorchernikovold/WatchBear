@@ -1,3 +1,4 @@
+using Game.Utils;
 using UnityEngine;
 
 public class Pickable : MonoBehaviour
@@ -6,6 +7,8 @@ public class Pickable : MonoBehaviour
     public float pickCooldown = 1f;
     public ItemType type;
     public Collider2D useCollider;
+
+    public AudioClip PickSound;
 
     private void OnValidate()
     {
@@ -37,6 +40,7 @@ public class Pickable : MonoBehaviour
 
         if (amount <= 0)
         {
+            AudioSystem.PlaySound(PickSound, transform.position, 1f, 128);
             Destroy(gameObject);
         }
     }

@@ -1,3 +1,4 @@
+using Game.Utils;
 using UnityEngine;
 
 public class Gun : MonoBehaviour
@@ -40,6 +41,8 @@ public class Gun : MonoBehaviour
         if (currentAmmo <= 0 || delay > 0f)
             return;
         onAmmoChange?.Invoke();
+
+        AudioSystem.PlaySound(gun.ShootSound, transform.position, 1f, 128);
 
         currentAmmo -= 1;
         delay = 1f / gun.RPS;

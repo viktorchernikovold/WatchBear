@@ -15,3 +15,4 @@ MonoBehaviour:
   RPS: 2.5
   AmmoLimit: 6
   BulletToSpawn: {fileID: 536151930024775730, guid: 22a5d00521bf4fd4ebf9b1dde152bfd1, type: 3}
+  ShootSound: {fileID: 8300000, guid: cad6d798fa146c144b099319d6bcbf03, type: 3}
