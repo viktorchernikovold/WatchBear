@@ -392,6 +392,7 @@ MonoBehaviour:
   TimerMax: 6
   TimerMin: 4
   PlayerHPLowerThan: 8
+  MatchPlayerMissingHP: 1
 --- !u!1 &6605052233886831920
 GameObject:
   m_ObjectHideFlags: 0

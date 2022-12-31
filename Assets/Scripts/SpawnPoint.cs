@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
@@ -12,7 +13,11 @@ public class SpawnPoint : MonoBehaviour
 
     public int PlayerHPLowerThan;
 
+    public bool MatchPlayerMissingHP;
+
     float timer;
+
+    List<GameObject> gameObjects = new List<GameObject>();
 
     public Vector2 GetRandomPointWp()
     {
@@ -43,7 +48,13 @@ public class SpawnPoint : MonoBehaviour
             if (Player.main.mixin.health >= PlayerHPLowerThan)
                 return;
 
+            gameObjects.RemoveAll(item => item == null);
+
+            if (MatchPlayerMissingHP && (Player.main.mixin.maxHealth - Player.main.mixin.health) < gameObjects.Count)
+                return;
+
             Transform tr = Instantiate(spawnee, GetRandomPointWp(), Quaternion.identity).transform;
+            gameObjects.Add(tr.gameObject);
 
             Instantiate(spawnEffect, tr.position, tr.rotation);
 
