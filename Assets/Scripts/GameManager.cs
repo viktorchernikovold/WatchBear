@@ -67,6 +67,7 @@ public class GameManager : MonoBehaviour
         onEnd?.Invoke();
         Player.main.transform.position = new Vector3(0, 10000, 0);
         Player.main.mixin.Heal(1000);
+        Player.main.look.aimPoint.transform.position = Vector3.zero;
         matchPoints[currentMatchPoint].Disactivate();
         isPlaying = false;
         currentTime = 0f;
