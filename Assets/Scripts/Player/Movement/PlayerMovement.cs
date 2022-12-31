@@ -19,11 +19,11 @@ public class PlayerMovement : MonoBehaviour
         moveInput.y = Input.GetAxisRaw("Vertical");
         moveInput.Normalize();
 
-        this.velocity = useRigidbody.velocity;
-        this.speed = this.velocity.magnitude;
-        if (this.speed > 0)
+        velocity = useRigidbody.velocity;
+        speed = velocity.magnitude;
+        if (speed > 0)
         {
-            onMove?.Invoke(this.velocity);
+            onMove?.Invoke(velocity);
         }
         if (canMove)
         {
