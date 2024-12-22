@@ -61,7 +61,7 @@ public class Enemy : Entity
                 sprite.localRotation = Quaternion.Euler(Vector3.zero);
         }
 
-        useRigidbody.velocity = Vector2.zero;
+        useRigidbody.linearVelocity = Vector2.zero;
         attackCooldown -= Time.deltaTime;
         if (attackCooldown < 0) attackCooldown = 0;
         if (InAttackRange())
@@ -99,7 +99,7 @@ public class Enemy : Entity
         Vector2 direction = target.transform.position - transform.position;
         direction.Normalize();
         direction *= moveSpeed;
-        useRigidbody.velocity = direction;
+        useRigidbody.linearVelocity = direction;
     }
 
     protected virtual void Attack()

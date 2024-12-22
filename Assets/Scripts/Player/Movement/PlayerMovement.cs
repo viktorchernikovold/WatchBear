@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
         moveInput.y = Input.GetAxisRaw("Vertical");
         moveInput.Normalize();
 
-        velocity = useRigidbody.velocity;
+        velocity = useRigidbody.linearVelocity;
         speed = velocity.magnitude;
         if (speed > 0)
         {
@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
         if (canMove)
         {
             Vector2 deltaPos = moveInput * moveSpeed;
-            useRigidbody.velocity = deltaPos;
+            useRigidbody.linearVelocity = deltaPos;
         }
     }
 }

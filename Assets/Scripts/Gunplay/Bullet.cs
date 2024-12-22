@@ -38,7 +38,7 @@ public class Bullet : MonoBehaviour
         float timeFracture = timeInAir / dropTime;
         float speedMultiply = bullet.DropSpeedCurve.Evaluate(timeFracture);
         timeInAir += Time.deltaTime;
-        useRigidbody.velocity = transform.up * bullet.Speed * speedMultiply * ricochetSpeedDrop;
+        useRigidbody.linearVelocity = transform.up * bullet.Speed * speedMultiply * ricochetSpeedDrop;
     }
 
     public void Drop()
